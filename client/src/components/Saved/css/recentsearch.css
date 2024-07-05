@@ -1,0 +1,99 @@
+.maind{
+    width:100%;
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+}
+.serchcom{
+    width:70%;
+    height:300px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(198, 197, 197);
+
+}
+.probox{
+    padding: 10px;
+    height: 230px;
+    width:23%;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(198, 197, 197);
+
+}
+.savhead{
+    width:93%;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0px 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-width: 0.5px;
+    border-color: rgb(198, 197, 197);
+
+}
+.secdiv{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.rectsercard{
+    width:95%;
+    padding: 20px;
+    display:flex;
+    justify-content: space-around;
+    
+}
+.serchcard{
+    width:250px;
+    height:60px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    border-radius: 5px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: rgb(198, 197, 197);
+
+}
+.sercardimg{
+    height:30px;
+    width:30px
+}
+.cardnames{
+    font-size: 15px;
+    color: rgb(91, 89, 89);
+    margin-top: 2px;
+}
+.cardtit{
+    margin-top: -13px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.cardloc{
+    margin-top: -13px;
+    font-size: 15px;
+    color: rgb(91, 89, 89);
+}
+.boldtxt{
+    font-weight: bold;
+}
+.colorgrey{
+    color: rgb(232, 228, 228);
+
+}
+.prolas{
+    justify-content: space-around;
+    display: flex;
+}
+.proconte{
+    width:70%;
+}
+.svgpro{
+    margin-top: 20px;
+}

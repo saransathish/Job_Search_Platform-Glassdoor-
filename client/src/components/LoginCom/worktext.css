@@ -1,0 +1,113 @@
+/* Container styles */
+.auth-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+/* Initial text styles */
+.initial-text {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+}
+
+.initial-text a {
+  color:  green;
+  text-decoration: none;
+}
+
+.initial-text a:hover {
+  text-decoration: underline;
+}
+
+/* Button styles */
+.auth-button {
+  width: 80%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  /* border: none; */
+  border-radius: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.google-button {
+  /* background-color: #db4437;
+  color: white; */
+  border: 1px solid black;
+  background-color: white;
+
+}
+
+.facebook-button {
+  background-color: white;
+  /*color: white; */
+  border: 1px solid black;
+}
+.facebook-button img {
+  height: 27px;
+}
+
+.email-button img{
+  height:25px;
+}
+
+.email-button {
+  /* background-color: #555;
+  color: white; */
+  border: 1px solid black;
+  background-color: white;
+
+}
+.email-button:hover{
+  background-color: rgb(16, 113, 16);
+  color:white
+}
+
+.auth-button i {
+  margin-right: 10px;
+  border-radius: 1px;
+  color: #333;
+  padding: 5px;
+}
+
+/* Input styles */
+.auth-input {
+  width: 75%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  align-items: center;
+  
+}
+
+.textemail{
+  align-items: none;
+  align-content:baseline;
+  text-align: left;
+  padding: 0px;
+}
+
+
+
+.google{
+  height: 25px;
+  justify-self: left;
+  justify-items: left;
+}
+.facebook{
+  height: 200px;
+}

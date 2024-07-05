@@ -1,0 +1,207 @@
+.companyheader{
+    display:flex;
+    background-color: #f3f9f5;
+    height:450px
+}
+
+.companyimg{
+    justify-content: center;
+    align-items: center;
+    width:50%
+}
+.companyimg img{
+    height: 500px;
+    width: 600px;
+}
+.companytext{
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: -90px;
+    /* background-color: aqua; */
+}
+.texdiv{
+    width:70%;
+    align-items: center;
+    justify-content: center;
+}
+.btndiv{
+    padding: 10px;
+    display: block;
+    justify-content: space-evenly;
+    width:70%;
+    color: #A9ACB2;
+    height: 100px;
+
+}
+.compbtn{
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    border-width: 0.5px;
+    color: #757577;
+    cursor: pointer;
+
+
+}
+
+.btn1{
+    margin-left: 25px;
+    margin-bottom: 10px;
+
+}
+.btn2{
+    margin-left: 20px;
+}
+.btn3{
+    margin-left: 25px;
+}
+.compbtn:hover{
+    color: #537cb2;
+}
+.paratext{
+    color: #454546;
+    font-size: 17px;
+}
+
+.parati{
+    font-size: 27px;
+}
+.new{
+    background-color: #98E1B1;
+    color: #0b6620;
+    font-size: 14px;
+    padding: 2px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  .modal::-webkit-scrollbar {
+    display: none;
+}
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+.modal2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 550px;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  .modal2::-webkit-scrollbar {
+    display: none;
+}
+.backdrop2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+ 
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    height: 20px;
+    background-color: #f2f2f2;
+
+  }
+  .close-btn:hover{
+    background-color: rgb(3, 169, 3);
+    color: white;
+  }
+.dataaddhead{
+    color: green;
+    font-size: 28px;
+    margin-top: -5px;
+}
+.dataimg img{
+    height: 180px;
+    width: 250px;
+}
+.databtns{
+    display: inline-block;
+    /* margin-top: 20px; */
+    padding: 20px;
+}
+.databtn{
+    display:flex;
+    justify-content: space-around;
+    padding: 10px;
+    height: 80px;
+    width: 400px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+.dataim{
+    height:130px;
+    width: 130px;
+    /* margin-top: -20px; */
+}
+.databt{
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    height:50px;
+}
+.databt:hover{
+    background-color: rgb(0, 155, 0);
+    color: white;
+    border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+    .companyheader{
+        display:inline-block;
+        height: 750px;
+    }
+    
+    .companyimg{
+        width:100%
+    }
+    
+    .companytext{
+        width: 100%;
+        margin-top: -80px;
+        margin-left: 10px;
+    }
+
+
+}

@@ -1,0 +1,154 @@
+.companyfirstdiv{
+    width: 99.8%;
+    height: 120px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: rgb(179, 179, 179);
+}
+.empdiv{
+    display: flex;
+    width: 40%;
+    margin-left: 50vb;
+    /* background-color: aqua; */
+    justify-content: space-evenly;
+    align-items: center;
+    height:100px;
+}
+
+.inputcompany{
+    border-width: 0.5px;
+    border-color: rgb(182, 181, 181);
+    width: 250px;
+    height: 35px;
+    border-radius: 3px;
+}
+.searchbtn{
+    padding: 10px;
+    color: white;
+    background-color: #0C4085;
+    width: 80px;
+    
+}
+.searchbtn:hover{
+    background-color: #033c87;
+}
+
+.expcom{
+    margin-left: 30px;
+}
+.filtercomp{
+    width:98%;
+    /* height: 100px; */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.innerdiv{
+    width: 95%;
+    display: flex;
+    margin-left: 30px;
+    justify-content: space-between;
+}
+.filterdiv{
+    border-width: 0.5px;
+    border: 1px solid rgb(202, 200, 200);
+    width:32%;
+
+}
+.separator{
+    background-color: rgb(194, 194, 194);
+}
+.companydiv{
+    width:65%;
+    overflow-y: scroll;
+    height: 105vh;
+}
+.companydiv::-webkit-scrollbar {
+    display: none;
+}
+.head1{
+    padding: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(202, 200, 200);
+    border-top:none ;
+    border-left: none;
+    border-right: none;
+}
+.filtercompy{
+font-size: 23px;
+font-weight: bold;
+margin-top: 5px;
+}
+.showingfi{
+    font-size: 18px;
+    margin-top: -15px;
+}
+.locdiv{
+    padding: 10px;
+    margin-top: -15px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(202, 200, 200);
+    border-top:none ;
+    border-left: none;
+    border-right: none;
+}
+.context{
+    color: rgb(105, 104, 104);
+}
+.coninp{
+    height: 35px;
+    width: 95%;
+    border-width: 0.1px;
+    border-color: rgb(202, 200, 200);
+    border-radius: 5px;
+    margin-top: -10px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: rgb(202, 200, 200);
+}
+.contextbold{
+    font-weight: bold;
+    font-size: 20px;
+}
+.rati{
+    color:black
+
+}
+.on{
+    margin-bottom: 5px;
+}
+
+.lastdi{
+    padding: 15px;
+}
+.buton{
+    background-color: white;
+    color:blue;
+    border: none;
+    font-size: 17px;
+}
+.buton:hover{
+    color:rgb(76, 76, 243);
+}
+
+
+
+
+
+@media (max-width: 900px) {
+.empdiv{
+    display: block;
+    width: 80%;
+    margin-left: 20%;
+}
+.searchbtn{
+margin-left: 20px;
+}
+
+}

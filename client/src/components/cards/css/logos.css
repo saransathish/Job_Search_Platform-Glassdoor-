@@ -1,0 +1,28 @@
+.logos{
+    display:flex;
+    
+}
+.logos img{
+    border-radius: 50px;
+    height:35px;
+    width:35px;
+    padding: 10px;
+}
+.comapnynm{
+    /* font-weight: 200; */
+    font-size: large;
+    padding-left: 10px;
+    font-weight:600;
+    color: rgb(70, 69, 69);
+}
+.rating{
+    padding: 0px;
+    padding-left: 20px;
+}
+a{
+    text-decoration: none;
+    
+}
+a:hover{
+    color:green;
+}

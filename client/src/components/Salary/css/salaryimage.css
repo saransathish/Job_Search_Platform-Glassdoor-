@@ -1,0 +1,184 @@
+.salimg{
+    height:482px;
+    /* width:500px */
+}
+.saltxt{
+    margin-top: -5px;
+    text-align: center;
+    justify-content: center;
+    background-color: #F5F6F7;
+    height:35px;
+    padding-top: 10px;
+    font-size: 18px;
+    color: rgb(99, 98, 98);
+}
+.salnew{
+    color:orange;
+    font-weight: bold;
+    font-size: large;
+}
+.salfi{
+    color:rgb(12, 12, 201);
+    font-weight: bold;
+}
+.saltxtdiv{
+    padding-top: 10px;
+    background-color: #00000099;
+    margin-top: -460px;
+    margin-left: 28%;
+    height:250px;
+    width:45%;
+    backface-visibility: hidden;
+}
+.salhe{
+    margin-top: 10px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: -15px;
+    font-weight: bold;
+}
+.salnavdiv{
+    display: flex;
+    padding-bottom: 15px;
+    justify-content: space-around;
+    border-bottom: 1.5px solid white;
+    width: 85%;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+.salbtn{
+    background-color: #00000000;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+.inpu1,.inpu2{
+    font-size: 17px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    width: 41%;
+    margin-top: 15px;
+    margin-left: 40px;
+    padding-left: 15px;
+}
+.inpu2{
+    width: 30%;
+    margin-left: 1px;
+}
+.inpu3{
+    height: 55px;
+    width: 60px;
+    border: none;
+    background-color: rgb(4, 180, 4);
+    color: white;
+    border-radius: 5px;
+
+}
+.inpu3:hover{
+    background-color: green;
+}
+.salchart{
+    height: 420px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.salscore{
+    margin-top: 220px;
+    width: 99%;
+
+}
+.flexdivi{
+    display: flex;
+    width: 88%;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(208, 206, 206);
+    margin-left: 80px;
+    padding: 10px;
+    justify-content: space-around;
+}
+.flexdivi:hover{
+    box-shadow: 5px 10px 18px #888888;
+}
+.evendiv{
+    font-size: 40px;
+    margin-top: 60px;
+    margin-left: 30px;
+    font-weight: bold;
+
+}
+.inlinediv{
+    width: 38%;
+    padding: 30px;
+}
+.saleventxt{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+.dissal{
+    height: 45px;
+    width: 450px;
+    font-size: 20px;
+    color:white;
+    background-color:#04ae3d ;
+    border:none;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.dissal:hover{
+    background-color: #056B27;
+}
+.greydiv{
+    margin-top: 50px;
+    background-color: #E6E8EA;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+}
+.blogimgs{
+    height:230px;
+    width: 390px;
+    /* padding-left: 5px; */
+}
+.bloghe{
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 40px;
+}
+.blockcards{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.blockcard{
+    height: 500px;
+    width: 390px;
+    background-color: white;
+}
+.padsal{
+    padding: 20px;
+    padding-top: 0px;
+}
+.readblog{
+    width:95%;
+    height: 50px;
+    background-color: #04ae3d;
+    color: white;
+    font-size: 19px;
+    border: none;
+    border-radius: 5px;
+}
+.readblog:hover{
+    background-color: #056B27;
+}
+.but1{
+    margin-top: 20px;
+}
+.blotxt{
+    font-size: 16px;
+}

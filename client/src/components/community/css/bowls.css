@@ -1,0 +1,66 @@
+
+
+.bowlimg{
+    height: 120px;
+    width: 120px;
+    border-radius: 70px;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    /* border-style: solid; */
+    border-bottom: solid;
+    border-color: grey;
+    border-width: 0.8px;
+
+}
+.bowltitle{
+    font-size: 20px;
+
+}
+
+.bowldesc{
+    font-size: 18px;
+    color: rgb(62, 62, 62);
+}
+.div2{
+    padding-left: 10px;
+
+}
+.viewbtn{
+    height: 35px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 17px;
+    /* border-width: 0.5px; */
+    border: none;
+    padding-left: 10px;
+    width: 95px;
+    cursor: pointer;
+
+}
+.viewbtn:hover{
+    background-color: antiquewhite;
+}
+.flwbtn{
+    height:35px ;
+    width: 95px;
+    border-radius: 5px;
+    background-color: white;
+    font-size:17px;
+    border-width: 0.5px;
+    cursor: pointer;
+}
+.flwbtn:hover{
+    background-color: green;
+    color: white;
+    font-size: 17px;
+
+}
+.div3{
+    padding-left: 30px;
+    justify-content: space-evenly;
+}

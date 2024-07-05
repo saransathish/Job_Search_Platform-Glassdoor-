@@ -1,0 +1,21 @@
+.welcmtxt{
+    color:rgb(4, 166, 4);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.submitbtn{
+    margin-top: 5px;
+    width: 80%;
+    padding: 10px;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+    font-size: 17px;
+
+}
+.submitbtn:hover{
+    background-color: green;
+    color:white
+}

@@ -1,0 +1,40 @@
+.smallcard1{
+    background-color: #ffffff;
+    height:100px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(204, 201, 201);
+}
+
+.smallcards1::-webkit-scrollbar {
+    display: none;
+}
+.smallcard1:hover{
+    border-color: #2AABDE;
+}
+.edit{
+    background-color: #1d6ad0;
+    color: white;
+    font-size: 17px;
+}
+.edit:hover{
+    background-color: #06336d;
+    color: white;
+}
+.remo{
+    margin-left: 15px;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #0C4085;
+    color: #0C4085;
+    font-size: 17px;
+}
+.remo:hover{
+    background-color: #2273dc;
+    color: white;
+}
+
+.largecontain1{
+    margin-top: -20px;
+}

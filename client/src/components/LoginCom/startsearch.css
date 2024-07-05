@@ -1,0 +1,41 @@
+/* Container styles */
+.inspiration-container {
+    /* width: 100%; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: black;
+  }
+  
+  /* Heading styles */
+  .inspiration-heading {
+    margin-bottom: 10px;
+    font-size: 30px;;
+    color: black;
+  }
+  
+  /* Text styles */
+  .inspiration-text {
+    font-size: 20px;
+    color: #555;
+  }
+
+  .footer{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 1px #555;
+    font-size: large;
+  }
+  .line{
+    margin-top: -3px;
+    color: black;
+  }
+  

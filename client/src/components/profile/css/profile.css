@@ -1,0 +1,304 @@
+.profile-main{
+    /* height:700px; */
+    /* border:solid ; */
+    border-width: 0.5px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+.profile-main-left{
+    padding: 10px;
+    margin-top: 50px;
+    width: 18%;
+    height: 100%;
+    /* border: solid;  */
+    border-width: 0.5px; 
+    border-color: rgb(162, 161, 161); 
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+.profile-main-middle{
+    margin-top: 50px;
+    width: 45%;
+    height: 100%;
+    border: solid;
+    border-width: 0.5px;
+    border-color: rgb(162, 161, 161);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+
+}
+.profile-main-right{
+    margin-top: 50px;
+    width: 30%;
+    height: 100%;
+    border: solid;
+    border-width: 0.5px;
+    padding-left: 10px;
+    border-color: rgb(162, 161, 161);
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+
+}
+.profile-right-head{
+    /* padding-top: px; */
+    padding-left: 20px;
+
+}
+.profile-right-headtxt{
+    /* padding-top: 0px; */
+    padding-left: 20px;
+    font-size: 17px;
+
+}
+.bowlleft{
+    /* margin-left: 10px; */
+    margin-top: -10px;
+}
+.profileimgs{
+    /* margin: */
+    border-radius: 80px;
+    height: 150px;
+    width: 150px;
+    margin-left: -40px;
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+}
+
+
+
+
+.pronam{
+    font-style: italic;
+    margin-left: 20px;
+}
+.proloc{
+    padding-left: 20px;
+    font-size: 20px;
+    color: rgb(87, 86, 86);
+}
+.probtn{
+    border: none;
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color:  rgb(87, 86, 86);
+    width:200px;
+    cursor: pointer;
+}
+.probtn:hover{
+    color:black;
+    border-left: 4px solid grey;
+}
+.signou{
+    font-size: 18px;
+    margin-left: 40px;
+    width:200px;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+}
+.signoutim{
+    color:rgb(90, 89, 89);
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+}
+.helpbtn{
+    background-color: white;
+    padding: 10px;
+    border-width: 0.5px;
+    font-size: 20px;
+    color: rgb(45, 45, 45);
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.profilemidhead{
+    display: flex;
+    /* border-bottom: 0.5px solid grey; */
+}
+.promidimg{
+    height: 170px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.promidtxt{
+    width: 50%;
+    /* margin-left: 20px; */
+}
+.prohea{
+    font-size: 25px;
+}
+.prohetxa{
+    font-size: 17px;
+    font-weight: 500;
+}
+.separa{
+    /* height: 0.5px; */
+    width: 106%;
+    margin-left: -20px;
+}
+.uploadcv{
+    border: 0.5px dotted grey;
+    height: 80px;
+    border-radius: 5px;
+    width: 95%;
+    display: flex;
+    margin-left: 0px;
+    cursor: pointer;
+}
+.uplo{
+    height: 23px;
+    width:23px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.uplaofil{
+    width:70%;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+.cvtxt{
+    margin-top: -10px;
+}
+.prigre{
+    color: green;
+    cursor: pointer;
+}
+.widthlow{
+    width:95%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.spantxts{
+    font-size: 25px;
+}
+.editbtn{
+    background-color: white;
+    border: none;
+}
+.ques{
+    font-size: 17px;
+    padding-left: 10px;
+}
+.answ{
+    font-size: 17px;
+    padding-left: 10px;
+    color: grey;
+    margin-top: -10px;
+}
+/* .displaymode{
+    display: none;
+} */
+ .lockdata{
+    display: flex;
+    background-color: #F4F4F4;
+    height: 45px;
+    margin-left: 10px;
+ }
+ .lockimags{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+ }
+ .locktxt{
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: -2px;
+    color: rgb(84, 84, 84);
+ }
+ .gresp{
+    color: green;
+ }
+ .inputpro{
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border-width: 0.5px;
+    margin-left: 20px;
+    font-size: 17px;
+    padding-left: 20px;
+    margin-top: -10px;
+ }
+ .buttonssav{
+    display: flex;
+    /* border: solid; */
+    height:40px;
+    justify-content: space-between;
+    width: 95%;
+    margin-left: 15px;
+    margin-top: 20px;
+ }
+ .cnbtn{
+    width: 45%;
+    background-color: white;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    font-size: 17px;
+ }
+ .cnbtn:hover{
+    background-color: rgb(236, 232, 232);
+ }
+ .savbtn{
+    width: 45%;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    font-size: 17px;
+    background-color:rgb(178,184,194) ;
+    color: white;
+ }
+ .savbtn:hover{
+    background-color:rgb(132, 133, 134) ;
+
+ }
+
+ .profile-image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .edit-icon {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: 65%;
+    left: 70%;
+    color: black;
+    background: white;
+    border-style: solid;
+    border-width: 0.2px;
+    border-radius: 60%;
+    padding: 9px;
+    cursor: pointer;
+  }
+  .myresume{
+    margin-bottom: 20px;
+    color: white;
+    border: solid;
+    border-width: 0.5px;
+    border-color: grey;
+    background-color: rgb(14, 164, 14);
+    height: 20px;
+    width: 150px;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 19px;
+    border-radius: 5px;
+  }
+  .myresume:hover{
+    background-color: rgb(0, 155, 0);
+  }

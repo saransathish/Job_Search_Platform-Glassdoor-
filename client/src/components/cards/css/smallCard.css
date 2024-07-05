@@ -1,0 +1,52 @@
+.logo{
+    height:20px;
+    width:20px
+}
+.topsmall{
+    display:flex;
+    justify-content: space-between;
+}
+
+.bookmarkcnt{
+    margin-top: 10px;
+    margin-right: 20px;;
+}
+
+.jobti{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -5px;
+    margin-left: 15px;
+}
+
+.jobloc{
+    margin-left: 15px;
+    margin-top: -10px;
+}
+
+.smallbnt{
+    background-color: rgb(171, 237, 171);
+    color: rgb(3, 84, 3);
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.smalllast{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    /* margin-top: -10px; */
+    margin-left: 15px;
+    /* background-color: aqua; */
+}
+.publi{
+    margin-right: 20px;
+    margin-top: 0px;
+}
+
+.bookmark{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,55 @@
+.headercom{
+    color: rgb(1, 132, 1);
+    font-size: 29px;
+    margin-top: -8px;
+}
+.headimage{
+    height: 200px;
+    width: 250px;
+    margin-top: -30px;
+}
+.dataaddingdiv{
+    margin-top: 10px;
+    /* border-style: solid;
+    border-width: 0.5px;
+    border-color: grey; */
+    border-radius: 5px;
+    padding-top: 10px;
+
+}
+.datainputadd{
+    /* height: ; */
+    width: 70%;
+    padding: 10px;
+}
+.textinputs{
+    height:40px;
+    width: 400px;
+    padding-left: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border-width: 0.5px;
+}
+.labelinput{
+    margin-top: -7px;
+    margin-bottom: 5px;
+}
+.textareainp{
+    height: 100px;
+    width: 420px;
+    border-radius: 5px;
+
+}
+.dataaddbtn{
+    background-color: rgb(11, 141, 11);
+    height: 40px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.dataaddbtn:hover{
+    background-color: green;
+}

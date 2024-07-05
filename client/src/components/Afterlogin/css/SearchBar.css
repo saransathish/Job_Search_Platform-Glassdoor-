@@ -1,0 +1,35 @@
+/* src/components/SearchBar.css */
+.maincon {
+    align-items: center;
+    display: flex;
+    width: 50%;
+}
+.search-bar1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    width: 50%;
+    background-color: #ffffff;
+    border: 2px solid rgba(1, 1, 1, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar1::before {
+    border-radius: 2px solid green;
+}
+.search-bar1 .search-icon {
+    margin-right: 10px;
+    color: #666;
+}
+
+.search-bar1 input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}

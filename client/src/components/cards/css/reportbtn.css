@@ -1,0 +1,54 @@
+.button-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .round-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* background-color: #dedfe1; */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .round-button:hover {
+    background-color: #b2b2b4;
+  }
+  
+  .dots {
+    font-size: 24px;
+    margin-top: -12px;
+  }
+  
+  .report-button {
+    position: absolute;
+    height: 40px;
+    width:90px;
+    padding: 50px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(245, 237, 237);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .round-button:hover .report-button,
+  .round-button:active .report-button {
+    opacity: 1;
+  }
+  
+  .report-button {
+    opacity: 0;
+  }
+  

@@ -1,0 +1,61 @@
+/* src/components/TabNavBar.css */
+.tab-navbar {
+    width:98.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+}
+
+.tab-{
+    width:auto;
+    display: flex;
+    
+}
+
+.tab-item {
+    position: relative;
+    margin: 0 20px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.tab-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgb(10, 143, 68);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.1s ease-in-out;
+}
+
+.tab-item:hover::after,
+.tab-item.active::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.res-text{
+    padding:10px;
+    color: green;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.jobsep{
+    margin-top: -2px;
+}
+
+.active-tab {
+    color: green; 
+    text-decoration: underline;
+}

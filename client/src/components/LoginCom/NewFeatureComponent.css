@@ -1,0 +1,38 @@
+/* Container styles */
+.feature-contain {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Text styles */
+  .feature-text {
+    font-size: 30px;
+    color: black;
+    font-weight: bolder;
+  }
+
+  .feature-text1 {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Video container styles */
+  .video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* video {
+    width: 50%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 10px;
+  } */
+  

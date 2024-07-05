@@ -1,0 +1,212 @@
+.maincommunity{
+    display: flex;
+    justify-content: space-between;
+}
+
+.postcont{
+    /* background-color: green; */
+    height: 100%;
+    width: 17%;
+    padding: 10px;
+}
+
+.postbtn{
+    height:40px;
+    width: 80%;
+    background-color: rgb(10, 232, 95);
+    border-radius: 5px;
+    border: none;
+    font-size: 19px;
+}
+.plus {
+    font-size: 24px;
+}
+
+.postbtn:hover{
+    background-color: green;
+    color:white
+}
+.communitycont{
+    /* background-color: aqua; */
+    width: 47%;
+    padding: 30px;
+    
+
+}
+
+.bowlcont{
+    /* background-color: aquamarine; */
+    padding: 10px;
+    width: 27%;
+    border-style: solid;
+    border-color: rgb(212, 210, 210);
+    border-width: 1px;
+    margin-top: 40px;
+    border-radius: 5px;
+    height: 834px;
+}
+
+.expbtn{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    height: 35px;
+    width: 70%;
+}
+.expbtn:hover{
+    background-color: green;
+    color:white;
+}
+.exptxt{
+    font-size: 17px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 15px 40px;
+    width: 85%;
+    background-color: #ffffff;
+    border: 2px solid rgba(205, 203, 203, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar::before {
+    border-radius: 2px solid green;
+}
+.search-bar .search-icon {
+    margin-right: 10px;
+    color: #666;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}
+.mncm{
+    border: rgb(235, 231, 231);
+    width: 100%;
+    /* background-color: red; */
+    height: 810px;
+    border-style: solid;
+    border-color: rgb(218, 210, 210);
+    border-width: 1px;
+    border-radius: 5px;
+    /* height: 100vh; */
+}
+.pstcon{
+    /* background-color: yellow; */
+    width: 100%;
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    padding-top: 10;
+    color: black ;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(195, 192, 192);
+    border-top:none;
+    border-left: none;
+    border-right: none; 
+}
+.degicon{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    border: 2px;
+    background-color: white;
+}
+.postt{
+    height: 40px;
+    padding-left: 20px;
+    width: 70%;
+    border-style: solid;
+    border-color: #c3c1c1;
+    border-radius: 3px;
+}
+.postmn{
+    border-bottom: rgb(246, 240, 240);
+    width: 100%;
+    padding: 10px;
+}
+.scrpos{
+    width: 100%;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    height: 84.5%;
+}
+.scrpos::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/* bowl icon css */
+
+.iconcont{
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.bowlicon{
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+}
+.bowlname{
+    padding-left: 8px;
+    font-size: large;
+    font-weight: 600;
+    color: black;
+}
+
+.searchbowl{
+    padding-left: 20px;
+}
+
+.bowmai{
+    font-weight: bold;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.explo{
+    color: green;
+    font-size: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+
+}
+.explo:hover{
+    text-decoration: underline;
+}
+
+.bow{
+    border-bottom: solid;
+    /* width: ; */
+}
+
+
+
+@media(max-width: 1100px) {
+
+    .bowlcont{
+        display: none;
+    }
+    .communitycont{
+        width:70%;
+    }
+}

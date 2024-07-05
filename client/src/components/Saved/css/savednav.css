@@ -1,0 +1,24 @@
+.navbars {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f8f9fa;
+    /* padding: 1rem; */
+    font-size: 18px;
+}
+
+.navbars ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbars li {
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbars li.active {
+    color: green;
+    border-bottom: 2px solid green;
+}
+

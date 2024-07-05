@@ -1,0 +1,133 @@
+.largecontain{
+    border-radius: 5px;
+    /* background-color: antiquewhite; */
+    /* box-shadow: 10px 10px 10px 10px rgb(221, 218, 218); */
+    /* padding-bottom: 100px; */
+    border-style: solid;
+    border-width: 0.4px;
+    border-color: rgb(201, 199, 199);
+    padding: px;
+
+}
+.largeconatainer::-webkit-scrollbar {
+    display: none;
+}
+.topconatiner{
+    height:100px;
+    display:flex;
+
+}
+.companyname{
+    width:60%;
+}
+.apply{
+    padding: 0px 30px;
+    width:35%;
+    height: inherit;
+    display: flex;
+    /* justify-self: center; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.job_name{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 15px;
+    margin-top: -5px;
+}
+.location{
+    font-size: 15px;
+    padding-left: 15px;
+    margin-top: -10px;
+}
+
+.descrip{
+    padding-left: 15px;
+
+}
+.descrip a{
+    color:green;
+    text-decoration: none;
+}
+
+.easbtn{
+    height: 40px;
+    width:130px;
+    color:black;
+    background-color: rgb(53, 197, 53);
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    /* padding: 5px; */
+
+}
+.easbtn:hover{
+    background-color: green;
+    color: white;
+}
+.des{
+    padding-left: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+hr{
+    padding:0px;
+
+}
+
+.basepay{
+    padding-left: 15px;
+}
+.sal{
+    background-color: rgb(241, 241, 237);
+    padding:5px;
+    border-radius: 10px;
+}
+.sal span{
+    color:rgb(42, 168, 42);
+    font-size: 25px;
+    font-weight: bold;
+}
+.sal p{
+    font-size: 18px;
+    padding-left: 15px;
+}
+
+.inf{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+.inficon{
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+    margin-top: 10px;
+    padding: 10px;
+}
+.inficon span{
+    color:blue;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.infcnt{
+    font-size: 13px;
+    color: rgb(119, 117, 117);
+
+}
+
+.lastdiv{
+    width: 25%;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 300px;
+    
+}

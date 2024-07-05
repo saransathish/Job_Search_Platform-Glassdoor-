@@ -1,0 +1,41 @@
+.smallcards{
+    /* background-color: green; */
+    background-color: white;
+    margin-left: 20px;
+}
+.smallcard{
+    background-color: #ffffff;
+    height:165px;
+    border-style: solid;
+    /* border-top: none ; */
+    border-left: none;
+    border-right: none;
+    border-width: 0.5px;
+    border-color: rgb(204, 201, 201);
+    /* margin-bottom: -5px; */
+}
+
+.smallcards::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+.smallcards{
+    display: none;
+}
+.largeconatainer{
+    width: 100%;
+    /* background-color: blue; */
+    padding: 0px;
+    
+}
+
+.maincnt{
+    justify-content: center;
+    background-color: #f0f0f0,
+}
+.largecard{
+    width:100%;
+    padding: 0px;
+}
+}
