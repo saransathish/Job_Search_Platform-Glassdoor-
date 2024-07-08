@@ -24,12 +24,12 @@ export class CompanyController {
 
 
 
-    // @Get('createcompany')
-    // @ApiOkResponse({ type: String })
+    @Get('createcompany')
+    @ApiOkResponse({ type: String })
 
-    // async initadd(){
-    //     return this.companyservice.createcompany();
-    // }
+    async initadd(){
+        return this.companyservice.createcompany();
+    }
 
     @Get()
     @ApiOkResponse({ type: [Company] })

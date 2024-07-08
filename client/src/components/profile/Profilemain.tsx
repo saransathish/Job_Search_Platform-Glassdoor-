@@ -139,7 +139,7 @@ export const Profilemain = () => {
       <div className="profile-main">
         <div className="profile-main-left">
           <center>
-            <div className="profile-image-container" onClick={handleProfileImageClick}>
+            <div className="profile-image-container" >
               {loading ? (
                 <Skeleton circle={true} height={100} width={100} />
               ) : (
@@ -149,7 +149,7 @@ export const Profilemain = () => {
                   alt="Profile"
                 />
               )}
-              <div className="edit-icon">
+              <div className="edit-icon" onClick={handleProfileImageClick}>
                 <GrEdit />
               </div>
             </div>
