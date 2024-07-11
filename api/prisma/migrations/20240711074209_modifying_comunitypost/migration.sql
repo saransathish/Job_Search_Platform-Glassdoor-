@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Comments" ADD COLUMN     "postedAt" DATE NOT NULL DEFAULT CURRENT_TIMESTAMP;

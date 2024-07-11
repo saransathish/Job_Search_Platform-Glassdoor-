@@ -62,16 +62,9 @@ padding-bottom: 20px;
 .socialcon{
     display: flex;
     height: 20px;
+    margin-bottom: 15px;
 }
 
-.socialcon:hover{
-    color:green;
-    background-color: rgb(241, 241, 236);
-    height: 25px;
-    width:auto;
-    padding: 2px;
-    border-radius: 10px;
-}
 .social{
     display: flex;
     justify-content: space-around;
@@ -89,4 +82,80 @@ padding-bottom: 20px;
     font-size: 18px;
     padding-left: 10px;
     padding-top:2px;
+}
+
+
+
+
+.heart-icon {
+    height: 100px;
+    width: 100px;
+    background: url("../images/hearts.png");
+    cursor: pointer;
+    margin-top: -35px;
+    margin-right: -35px;
+  }
+  
+  .heart-icon.liked {
+    animation: like-anim 2s steps(28) forwards;
+  }
+  @keyframes like-anim {
+    to {
+      background-position: right;
+    }
+  }
+  
+/* Add to communitymain.css or a separate CSS file */
+.maincommunity.blur {
+    filter: blur(10px); /* Increased blur effect */
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.comment-section input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
 }

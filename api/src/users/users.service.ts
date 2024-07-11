@@ -7,6 +7,7 @@ import { Userexist } from './dto/input/userexist.input';
 import { Emailpass } from './dto/input/emailpass.input';
 import { JobId } from './dto/input/jobid.input';
 import { S3Service } from 'src/company/upload.service';
+import { UserData } from '@prisma/client';
 
 
 
@@ -48,6 +49,11 @@ export class UsersService {
     async getallusers():Promise<User[]> {
         return this.prisma.prismaClient.user.findMany({})
     }
+
+    async UsersDatas():Promise<UserData[]> {
+        return this.prisma.prismaClient.userData.findMany({include:{user:true}})
+    }
+
     async getallbookmarks(){
         return this.prisma.prismaClient.userData.findMany({})
     }

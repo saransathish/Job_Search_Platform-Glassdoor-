@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { Bowls } from '../community/Bowls';
 import './css/profile.css';
 import { GrUpload, GrEdit } from "react-icons/gr";
 import { SlLock } from "react-icons/sl";
@@ -9,6 +8,9 @@ import profile from './images/profileimage.jpg';
 import { Users, api } from '../../models/model';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BowlProfile } from './BowlProfile';
+import { ProfileMidHead } from './ProfileMidHead';
+import { ProfileNav } from './ProfileNav';
 
 export const Profilemain = () => {
   const [userProfile, setUserProfile] = useState<Users | null>(null);
@@ -17,7 +19,6 @@ export const Profilemain = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const profileImageInputRef = useRef<HTMLInputElement | null>(null);
-
   useEffect(() => {
     fetch(`${api}users/aboutUsers`)
       .then(response => response.json())
@@ -31,16 +32,13 @@ export const Profilemain = () => {
         setLoading(false);
       });
   }, []);
-
   const handleEditClick = () => {
     setIsEditing(true);
   };
-
   const handleCancelClick = () => {
     setIsEditing(false);
     setEditValues(userProfile);
   };
-
   const handleSaveClick = () => {
     if (editValues) {
       fetch(`${api}users/updateuser`, {
@@ -59,42 +57,25 @@ export const Profilemain = () => {
         .catch(error => console.error('Error updating user data:', error));
     }
   };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEditValues(prevState => prevState ? { ...prevState, [name]: value } : null);
   };
-
-  const handleProfileClick = () => {
-    window.location.href = "/profilepage";
-  };
-
-  const handleLogoutClick = () => {
-    window.location.href = "/";
-  };
-
-  const handleJobClick = () => {
-    window.location.href = "/jobs";
-  };
-
   const handleUploadClick = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
-
   const handleProfileImageClick = () => {
     if (profileImageInputRef.current) {
       profileImageInputRef.current.click();
     }
   };
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       const formData = new FormData();
       formData.append('file', file);
-
       fetch(`${api}users/updateresume`, {
         method: 'POST',
         body: formData,
@@ -110,7 +91,6 @@ export const Profilemain = () => {
         });
     }
   };
-
   const handleProfileImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
@@ -132,7 +112,6 @@ export const Profilemain = () => {
         });
     }
   };
-
   return (
     <>
       <ToastContainer />
@@ -156,30 +135,11 @@ export const Profilemain = () => {
           </center>
           <h2 className='pronam'>{loading ? <Skeleton width={150} /> : userProfile?.username}</h2>
           <p className='proloc'>{loading ? <Skeleton width={100} /> : userProfile?.location}</p>
-          <button onClick={handleProfileClick} className='probtn'>Profile</button>
-          <br />
-          <button onClick={handleJobClick} className='probtn'>Job Activity</button>
-          <hr />
-          <div onClick={handleLogoutClick} className='signou'>
-            <p>Sign out</p>
-            <div className='signoutim'>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="m12.02 6.981 4.687 4.664a.5.5 0 0 1 0 .708l-4.686 4.687-1.06-1.06 3.228-3.23H2v-1.5h12.184l-3.222-3.206 1.059-1.063Z" fill="#000"></path>
-                <path fillRule="evenodd" clipRule="evenodd" d="M8.75 4.5c-.69 0-1.25.56-1.25 1.25v3.393H6V5.75A2.75 2.75 0 0 1 8.75 3h9.5A2.75 2.75 0 0 1 21 5.75v11.995a2.75 2.75 0 0 1-2.757 2.75l-9.5-.026A2.75 2.75 0 0 1 6 17.72v-2.535h1.5v2.535a1.25 1.25 0 0 0 1.247 1.25l9.5.026a1.25 1.25 0 0 0 1.253-1.25V5.75c0-.69-.56-1.25-1.25-1.25h-9.5Z" fill="#000"></path>
-              </svg>
-            </div>
-          </div>
-          <a href="https://help.glassdoor.com/s/?language=en_US"><button className='helpbtn'><center>Help center</center></button></a>
+          <ProfileNav />
+
         </div>
         <div className="profile-main-middle">
-          <div className='profilemidhead'>
-            <div className='promidtxt'>
-              <h3 className='prohea'>Profile</h3>
-              <p className='prohetxa'>Build a better Glassdoor experience by managing your employment information.</p>
-            </div>
-            <img className='promidimg' src="https://www.glassdoor.co.in/profiles-next/static/_next/static/media/people.3da85b0f.png" alt="Profile Illustration" />
-          </div>
-          <hr className='separa' />
+          <ProfileMidHead />
           <h3>
             <span className='spantxts'>My information</span>
             <button className='editbtn' onClick={handleEditClick}><GrEdit /></button>
@@ -264,16 +224,7 @@ export const Profilemain = () => {
             />
           </div>
         </div>
-        <div className="profile-main-right">
-          <h2 className='profile-right-head'>Join in the conversation</h2>
-          <p className='profile-right-headtxt'>Dive into a Bowl for real, anonymous talk with other professionals.</p>
-          <div className='bowlleft'>
-            <Bowls bowl={{ icon: 'https://dslntlv9vhjr4.cloudfront.net/bowls_images/18SaaIiCOZhvc.jpg', name: 'Big 4 Discussions!', desc: 'Originally this was Made for confessions. This Bowl is now' }} />
-            <Bowls bowl={{ icon: 'https://dslntlv9vhjr4.cloudfront.net/bowls_images/7N3dbbQ9JjRLG.jpg', name: 'Pune Network', desc: "Physical and virtual group and 1:1 meetups for folks in Pune, India." }} />
-            <Bowls bowl={{ icon: 'https://dslntlv9vhjr4.cloudfront.net/bowls_images/cwwTrIKrzBNiO.jpg', name: 'Bangalore City', desc: "Useful Resources https://1drv.mssgfhhdb" }} />
-            <Bowls bowl={{ icon: 'https://www.glassdoor.com/images/bowls/headers/default-grey.png', name: 'Referral and Opportunities', desc: 'This group provides referrals and job opportunities to' }} />
-          </div>
-        </div>
+        <BowlProfile />
       </div>
     </>
   );

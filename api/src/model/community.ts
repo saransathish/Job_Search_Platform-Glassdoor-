@@ -6,31 +6,39 @@ import { ApiProperty } from '@nestjs/swagger';
 export class Community {
     @Field()
     @ApiProperty()
-    id:number;
+    communityId:string;
     
     @Field()
     @ApiProperty()
-    bowl_name: string;
+    communityIcon: string;
 
     @Field()
     @ApiProperty()
-    info: string;
+    communityName: string;
 
     @Field()
     @ApiProperty()
-    icon: string;
+    postTitle: string;
+
+    @Field()
+    @IsOptional()
+    @ApiProperty()
+    postContent: string;
 
     @Field()
     @IsOptional()
     @ApiProperty({ required: false })
-    description?: string;
-
-    @Field()
-    @IsOptional()
-    @ApiProperty({ required: false })
-    image?:string;
+    imageUrl?:string;
 
     @Field()
     @ApiProperty()
-    time: string;
+    postedAt: Date;
+
+    @Field()
+    @ApiProperty()
+    userId: string;
+
+    @Field()
+    @ApiProperty()
+    likesCount: number;
 }

@@ -10,6 +10,8 @@ import { Job } from 'src/model/jobs';
 import { JobId } from './dto/input/jobid.input';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { S3Service } from 'src/company/upload.service';
+import { promises } from 'dns';
+import { UserData } from '@prisma/client';
 
 
 @Controller('users')
@@ -87,6 +89,11 @@ export class UsersController {
   async aboutUsers(){
     return this.userservice.aboutUsers();
   }
+  @Get('UsersDatas')
+  @ApiOkResponse({ })
+  async UsersDatas():Promise<UserData[]>{
+    return this.userservice.UsersDatas();
+  }
 
   @Post('updateuser')
   @ApiOkResponse({ type: User })
@@ -125,5 +132,6 @@ export class UsersController {
     }
     return this.userservice.updateImage(imageurl)
   }
+
 
 }

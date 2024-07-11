@@ -52,6 +52,7 @@ export interface CommunityPost {
   imageUrl?: string;
   postedAt: string; 
   userId:string;
+  likesCount:number;
 }
 
 // export const api = 'http://localhost:3000/'

@@ -9,95 +9,107 @@ datasource db {
 }
 
 model User {
-  userId              String   @id  @default(uuid()) @db.VarChar(36)
-  email               String   @unique @db.VarChar(255)
-  password            String   @db.VarChar(128)
-  username            String   @db.VarChar(50)
-  age                 Int?     @db.Integer
-  yearsOfExperience   Int?     @db.Integer
-  preferredJobPosition String? @db.VarChar(100)
-  location             String?  @db.VarChar(100)
-  degree               String? @db.VarChar(255)
-  university           String? @db.VarChar(255)
-  resume               String? @db.VarChar(255)
-  image                String? @db.VarChar(255)
-  reviews             Review[]
-  logs                Log[]
-  usersDatas          UserData? 
+  userId               String    @id @default(uuid()) @db.VarChar(36)
+  email                String    @unique @db.VarChar(255)
+  password             String    @db.VarChar(128)
+  username             String    @db.VarChar(50)
+  age                  Int?      @db.Integer
+  yearsOfExperience    Int?      @db.Integer
+  preferredJobPosition String?   @db.VarChar(100)
+  location             String?   @db.VarChar(100)
+  degree               String?   @db.VarChar(255)
+  university           String?   @db.VarChar(255)
+  resume               String?   @db.VarChar(255)
+  image                String?   @db.VarChar(255)
+  reviews              Review[]
+  logs                 Log[]
+  usersDatas           UserData?
 }
 
 model Job {
-  jobId                 String   @id  @default(uuid()) @db.VarChar(36)
-  companyId             String   @db.VarChar(36)
-  companyName           String   @db.VarChar(100)
-  jobTitle              String   @db.VarChar(255)
-  location              String   @db.VarChar(100)
-  jobType               String   @db.VarChar(50)
-  hasRemote             Boolean? @db.Boolean
-  easyApply             Boolean?  @db.Boolean
-  published             DateTime @db.Date @default(now())
-  description           String   @db.Text
-  applicationUrl        String   @db.VarChar(255)
-  language              String   @db.VarChar(50)
-  clearanceRequired     Boolean  @db.Boolean
-  salaryCurrency        String?  @db.VarChar(10)
-  jobVacancies          Int?     @db.Integer
-  company               Company  @relation(fields: [companyId], references: [companyId], onDelete:Cascade )
-  reviews               Review[]
+  jobId             String   @id @default(uuid()) @db.VarChar(36)
+  companyId         String   @db.VarChar(36)
+  companyName       String   @db.VarChar(100)
+  jobTitle          String   @db.VarChar(255)
+  location          String   @db.VarChar(100)
+  jobType           String   @db.VarChar(50)
+  hasRemote         Boolean? @db.Boolean
+  easyApply         Boolean? @db.Boolean
+  published         DateTime @default(now()) @db.Date
+  description       String   @db.Text
+  applicationUrl    String   @db.VarChar(255)
+  language          String   @db.VarChar(50)
+  clearanceRequired Boolean  @db.Boolean
+  salaryCurrency    String?  @db.VarChar(10)
+  jobVacancies      Int?     @db.Integer
+  company           Company  @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+  reviews           Review[]
 }
 
 model Company {
-  companyId           String   @id  @default(uuid()) @db.VarChar(36)
-  companyName         String   @db.VarChar(100)
-  companyWebsiteUrl   String?  @db.VarChar(255)
-  companyLinkedinUrl  String?  @db.VarChar(255)
-  rating              Float?
-  iconUrl             String?  @db.VarChar(255)
-  location            String   @db.VarChar(100)
-  companySize         Int      @db.Integer
-  industry            String   @db.VarChar(50)
-  description         String?  @db.VarChar(1000)
-  jobs                Job[]  
-  reviews             Review[]
+  companyId          String   @id @default(uuid()) @db.VarChar(36)
+  companyName        String   @db.VarChar(100)
+  companyWebsiteUrl  String?  @db.VarChar(255)
+  companyLinkedinUrl String?  @db.VarChar(255)
+  rating             Float?
+  iconUrl            String?  @db.VarChar(255)
+  location           String   @db.VarChar(100)
+  companySize        Int      @db.Integer
+  industry           String   @db.VarChar(50)
+  description        String?  @db.VarChar(1000)
+  jobs               Job[]
+  reviews            Review[]
 }
 
 model CommunityPost {
   communityId   String   @id @default(uuid()) @db.VarChar(36)
-  communityIcon String  @db.VarChar(256)
-  communityName String  @db.VarChar(100)
+  communityIcon String   @db.VarChar(256)
+  communityName String   @db.VarChar(100)
   postTitle     String   @db.VarChar(100)
   postContent   String   @db.Text
   imageUrl      String?  @db.VarChar(255)
   postedAt      DateTime @default(now()) @db.Date
   userId        String   @db.VarChar(36)
+  likesCount    Int      @default(0) @db.Integer()
+  comment      CommunityComments[]
 }
 
 model Review {
-  reviewId    String   @id @default(uuid()) @db.VarChar(36)
-  rating      Int      @db.Integer
-  reviewText  String   @db.Text
-  userId      String   @db.VarChar(36)
-  jobId       String?  @db.VarChar(36)
-  companyId   String?  @db.VarChar(36)
-  createdAt   DateTime @default(now()) @db.Date
-  user        User     @relation(fields: [userId], references: [userId])
-  job         Job?     @relation(fields: [jobId], references: [jobId])
-  company     Company? @relation(fields: [companyId], references: [companyId])
+  reviewId   String   @id @default(uuid()) @db.VarChar(36)
+  rating     Int      @db.Integer
+  reviewText String   @db.Text
+  userId     String   @db.VarChar(36)
+  jobId      String?  @db.VarChar(36)
+  companyId  String?  @db.VarChar(36)
+  createdAt  DateTime @default(now()) @db.Date
+  user       User     @relation(fields: [userId], references: [userId])
+  job        Job?     @relation(fields: [jobId], references: [jobId])
+  company    Company? @relation(fields: [companyId], references: [companyId])
 }
 
 model UserData {
-  userDataId          String   @id  @default(uuid()) @db.VarChar(36)
-  userId              String   @unique @db.VarChar(36)
-  user                User?    @relation(fields: [userId], references: [userId])
-  bookmarksJobsId     String[]
-  bookmarksCompanyId  String[]
-  pastSearchActivity  String[]
+  userDataId         String     @id @default(uuid()) @db.VarChar(36)
+  userId             String     @unique @db.VarChar(36)
+  user               User?      @relation(fields: [userId], references: [userId])
+  bookmarksJobsId    String[]
+  bookmarksCompanyId String[]
+  pastSearchActivity String[]
+  likedPostsId       String[]
+}
+
+model CommunityComments {
+  commentId        String   @id @default(uuid()) @db.VarChar(36)
+  communityId      String   @db.VarChar(36)
+  userId           String   @db.VarChar(36)
+  commentContent String   @db.VarChar(255)
+  postedAt         DateTime @default(now()) @db.Date
+  Communitypost    CommunityPost @relation(fields: [ communityId],references: [communityId])
+
 }
 
 model Log {
-  logId     String   @id @default(uuid()) @db.VarChar(36)
-  isLogin   Boolean  @db.Boolean
-  userEmail String   @db.VarChar(255)
-  user      User     @relation(fields: [userEmail], references: [email])
+  logId     String  @id @default(uuid()) @db.VarChar(36)
+  isLogin   Boolean @db.Boolean
+  userEmail String  @db.VarChar(255)
+  user      User    @relation(fields: [userEmail], references: [email])
 }
-
