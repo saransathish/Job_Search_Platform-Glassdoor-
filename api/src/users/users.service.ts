@@ -8,6 +8,7 @@ import { Emailpass } from './dto/input/emailpass.input';
 import { JobId } from './dto/input/jobid.input';
 import { S3Service } from 'src/company/upload.service';
 import { UserData } from '@prisma/client';
+import { GetUserDataById } from './dto/input/getdataById.input';
 
 
 
@@ -202,5 +203,10 @@ export class UsersService {
                 where:{userId:userid},
                 data:{image:imageurl}
             })
+        }
+
+        async getUsersDataById(userid:GetUserDataById):Promise<User>{
+            return await this.prisma.prismaClient.user.findUnique({where:{userId:userid.userId}})
+
         }
 }

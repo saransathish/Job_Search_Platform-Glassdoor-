@@ -10,6 +10,7 @@ import { NewGoogleuser } from './components/Signin/newGoogleuser'
 import RegistrationForm from './components/Signin/signinregisteration'
 import JobPage from './pages/Jobs'
 import { Profile } from './pages/Profile'
+import Magnifier from './components/profile/Imageedit'
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
          <Route path="/checkinggoogle" element={<Checkinggoogle />} />
         <Route path="/newuser" element={<NewGoogleuser />} />
         <Route path='/createnewaccount' element={<RegistrationForm />} />
+        <Route path='/imageedit' element={<Magnifier src= '' width={600}
+        height={400}
+        zoom={3}
+        />} />
+
       </Routes>
     </>
   )

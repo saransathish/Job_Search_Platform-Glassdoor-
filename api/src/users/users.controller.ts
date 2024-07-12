@@ -12,6 +12,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { S3Service } from 'src/company/upload.service';
 import { promises } from 'dns';
 import { UserData } from '@prisma/client';
+import { GetUserDataById } from './dto/input/getdataById.input';
 
 
 @Controller('users')
@@ -111,7 +112,9 @@ export class UsersController {
     let resumeUrl: string | null = null;
 
     if (file) {
-      const key = await this.s3Service.uploadFile(file);
+      const user = await this.userservice.getuserid()
+      const userid = (await user).userId;
+      const key = await this.s3Service.uploadFile(file,userid);
       resumeUrl = this.s3Service.getFileupload(key);
     }
     return this.userservice.updateResume(resumeUrl)
@@ -127,10 +130,19 @@ export class UsersController {
     let imageurl: string | null = null;
 
     if (file) {
-      const key = await this.s3Service.uploadFile(file);
+      const user = await this.userservice.getuserid()
+      const userid = (await user).userId;
+
+      const key = await this.s3Service.uploadFile(file,userid);
       imageurl = this.s3Service.getFileupload(key);
     }
     return this.userservice.updateImage(imageurl)
+  }
+
+  @Post('getUsersDataById')
+  @ApiCreatedResponse({ type: User })
+  async getUsersDataById(@Body() userid:GetUserDataById):Promise<User>{
+    return this.userservice.getUsersDataById(userid);
   }
 
 

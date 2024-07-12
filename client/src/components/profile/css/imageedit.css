@@ -1,0 +1,30 @@
+.image-container {
+  position: relative;
+  border-radius: 50px;
+  /* height: ; */
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+}
+
+.magnifier-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.5;
+  border-radius: 50px;
+}
+
+.magnifier-result {
+  position: absolute;
+  left: calc(100% + 10px); /* Adjust as needed */
+  top: 0;
+  border: 1px solid #d4d4d4;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}

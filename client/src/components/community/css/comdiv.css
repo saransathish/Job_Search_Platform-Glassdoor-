@@ -1,0 +1,49 @@
+.comdiv{
+    background-color: #f4f9f6;
+    padding: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.comusericon{
+    height: 50px;
+    width: 50px;
+    border-radius: 70px;
+    border: solid;
+    border-width: 0.1px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.comcommenthea{
+    display: flex;
+    
+}
+.comhes{
+    display: flex;
+    justify-content: space-between;
+}
+.comcommenthea1{
+margin-left: 15px;  
+margin-top: -5px;  
+}
+.comcomuserti{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 17px;
+}
+
+.comcomuserti1{
+    font-size: 18px;
+    /* font-weight: bold; */
+    margin-top: -15px;
+}
+.pubtim{
+    font-size: 18px;
+    margin-right: 20px;
+}
+.comcontentmain{
+    font-size: 18px;
+    color: rgb(62, 61, 61);
+    margin-left: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+}

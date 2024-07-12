@@ -54,7 +54,7 @@ export class CompanyController {
     let iconUrl: string | null = null;
 
     if (file) {
-      const key = await this.s3Service.uploadFile(file);
+      const key = await this.s3Service.uploadCompanyIcon(file);
       iconUrl = this.s3Service.getFileupload(key);
     }
 
@@ -77,7 +77,7 @@ export class CompanyController {
     let iconUrl: string | null = null;
 
     if (file) {
-      const key = await this.s3Service.uploadFile(file);
+      const key = await this.s3Service.uploadCompanyIcon(file);
       iconUrl = this.s3Service.getFileupload(key);
     }
     const currentjob = {

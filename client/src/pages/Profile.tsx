@@ -1,11 +1,11 @@
-import NavigationBar from "../components/Afterlogin/NavigationBar"
+import NavigationBar from "./NavigationBar"
 import SearchInspirationComponent from "../components/LoginCom/Startsearch"
 import { Profilemain } from "../components/profile/Profilemain"
 
 export const Profile = () => {
   return (
     <>
-    <NavigationBar />
+    <NavigationBar activeTab="nothing" />
     <Profilemain />
     <SearchInspirationComponent />
 

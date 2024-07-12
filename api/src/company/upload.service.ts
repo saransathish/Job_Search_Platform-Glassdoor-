@@ -17,8 +17,27 @@ export class S3Service {
     this.bucketName = this.configService.get<string>('AWS_BUCKET_NAME');
   }
 
-  async uploadFile(file: Express.Multer.File) {
-    const key = `profile/${file.originalname}`;
+  async uploadFile(file: Express.Multer.File,userid:string) {
+    const key = `profile/${userid}/${file.originalname}`;
+    
+    try {
+      await this.s3
+        .putObject({
+          Bucket: this.bucketName,
+          Key: key,
+          Body: file.buffer,
+          ContentType: file.mimetype,
+        })
+        .promise();
+
+      return key;
+    } catch (error) {
+      throw new InternalServerErrorException('Error uploading file to S3');
+    }
+  }
+
+  async uploadCompanyIcon(file: Express.Multer.File) {
+    const key = `companyicons/${file.originalname}`;
     
     try {
       await this.s3
@@ -43,7 +62,7 @@ export class S3Service {
       await this.s3
         .putObject({
           Bucket: this.bucketName,
-          Key: key,
+          Key: `companyicons/${key}`,
           Body: buffer,
           ContentType: response.headers['content-type'],
         })

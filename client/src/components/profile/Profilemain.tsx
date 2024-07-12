@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BowlProfile } from './BowlProfile';
 import { ProfileMidHead } from './ProfileMidHead';
 import { ProfileNav } from './ProfileNav';
+import Magnifier from './Imageedit';
 
 export const Profilemain = () => {
   const [userProfile, setUserProfile] = useState<Users | null>(null);
@@ -122,11 +123,18 @@ export const Profilemain = () => {
               {loading ? (
                 <Skeleton circle={true} height={100} width={100} />
               ) : (
-                <img
-                  className='profileimgs'
-                  src={userProfile?.image || profile}
-                  alt="Profile"
-                />
+                <div className='profileimgs'>
+                  <Magnifier src= {userProfile?.image || profile} width={100}
+                height={100}
+                zoom={3} />
+                </div>
+                
+
+                // <img
+                //   className='profileimgs'
+                //   src={userProfile?.image || profile}
+                //   alt="Profile"
+                // />
               )}
               <div className="edit-icon" onClick={handleProfileImageClick}>
                 <GrEdit />

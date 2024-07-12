@@ -15,6 +15,12 @@ export class CommunityController {
     getallcommunityPost():Promise<Community[]>{
         return this.communityservice.getallcommunityPost();
     }
+    @Get('addcommunitydata')
+    @ApiOkResponse({description:'add communities',type:String})
+    async addcommu(){
+        return this.communityservice.addingdata();
+    }
+
     @Get('userLikes')
     @ApiOkResponse({description:'Get all communities',type:[String]})
     userLikes():Promise<String[]>{
@@ -33,7 +39,19 @@ export class CommunityController {
 
     @Post('addcomment')
     @ApiOkResponse({type:Community})
-    addComments(@Body() newcomment:NewComment){
-        return this.communityservice.addComments(newcomment);
+    async addComments(@Body() newcomment:NewComment){
+        await this.communityservice.addComments(newcomment);
+        return this.getallcommunityPost()
+    }
+    @Get('removedatacomment')
+    @ApiOkResponse({type:String})
+    removedatas(){
+        return this.communityservice.removedatas();
+    }
+
+    @Get('removedatacommunity')
+    @ApiOkResponse({type:String})
+    removedata(){
+        return this.communityservice.removedatas2();
     }
 }

@@ -38,7 +38,7 @@
 .navbar-center a:hover::after,
 .navbar-center a:focus::after {
     visibility: visible;
-    transform: scaleX(1);
+    /* transform: scaleX(1); */
 }
 
 .navbar-right .icon {
@@ -70,7 +70,6 @@
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    /* font-weight: bold; */
 }
 
 .popup-menu button {
@@ -84,4 +83,13 @@
 
 .popup-menu button:hover {
     background-color: #f0f0f0;
+}
+
+.activenavtab{
+    /* text-decoration: underline; */
+    color: rgb(10, 143, 68); 
+    border-bottom: 3px solid green;
+    padding-bottom: 5px;
+    bottom: -4px; /* Adjust the position of the underline */
+
 }

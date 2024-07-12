@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NavigationBar from "../components/Afterlogin/NavigationBar";
+import NavigationBar from "./NavigationBar";
 import MainCard from "../components/cards/MainCard";
 import { FaMapMarkerAlt, FaSearch, FaTimes } from 'react-icons/fa';
 import './css/search.css';
@@ -150,7 +150,7 @@ const JobPage: React.FC = () => {
 
     return (
         <>
-            <NavigationBar />
+            <NavigationBar activeTab='Jobs'/>
 
             <div className="search-bar1">
                 <div className="search-input-wrapper">

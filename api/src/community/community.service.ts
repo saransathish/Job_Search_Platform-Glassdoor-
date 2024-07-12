@@ -102,10 +102,19 @@ export class CommunityService {
       commentContent:communityid.comment,
       userId:user_id
     }})
-    return await this.prisma.prismaClient.communityPost.findMany({include:{comment:true}})
+    return 
     
 
   }
+  async removedatas(){
+    await this.prisma.prismaClient.communityComments.deleteMany({})
+    return 'sucess'
+  }
+  async removedatas2(){
+    await this.prisma.prismaClient.communityPost.deleteMany({})
+    return 'sucess'
+  }
+  
 
      
 
