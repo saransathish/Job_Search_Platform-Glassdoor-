@@ -154,7 +154,7 @@ Swagger is used for API documentation. The Swagger UI can be accessed for detail
 
 ## deployment
 Frontend
-The frontend is deployed on AWS Amplify. You can access the deployed frontend [here](https://main.daq8kzkn55nlw.amplifyapp.com).
+The frontend is deployed on AWS Amplify. You can access the deployed frontend [here](https://main.d6owqsm1ibqgv.amplifyapp.com).
 
 
 
