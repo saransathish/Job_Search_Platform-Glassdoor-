@@ -45,11 +45,15 @@ export const CompanyCard = (props:companys) => {
                 <strong>Global Company Size</strong>
                 {props.companys.companySize}+ Employees
             </div>
-            <div className="detail">
+            <div className="detail displaynone2">
                 <strong>Industry</strong>
                 {props.companys.industry}
             </div>
         </div>
+        <div className="detail displaynone1">
+                <strong>Industry</strong>
+                {props.companys.industry}
+            </div>
         <div>
             <strong>Description</strong>
             <p className="description">{props.companys.description}...</p>

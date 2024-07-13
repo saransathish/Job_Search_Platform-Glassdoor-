@@ -189,6 +189,7 @@
 }
 .saltxt{
     height:100%;
+    padding-bottom: 10px;
 }
 .saltxtdiv{
     width: 100%;
@@ -234,7 +235,13 @@
 .blockcards{
     display: inline;
 }
-.blockcard,.blogimgs{
+.blockcard{
+    width: 94%;
+    margin-left: 2%;
+    margin-top: 2%;
+    height:100%
+}
+.blogimgs{
     width: 94%;
     margin-left: 2%;
     margin-top: 2%;

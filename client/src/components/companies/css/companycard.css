@@ -63,16 +63,16 @@
     color:#4676c4;
     margin-top: 5px;
 }
-.company-card .details {
+ .details {
     display: flex;
     justify-content: space-around;
     margin-bottom: 15px;
 }
-.company-card .details .detail {
+ .detail {
     font-size: 16px;
     padding: 0px 20px;
 }
-.company-card .details .detail strong {
+ .detail strong {
     display: block;
     font-weight: bold;
 }
@@ -82,4 +82,33 @@
 }
 .detail1{
     margin-left: -25px;
+}
+.displaynone1{
+    display: none;
+}
+@media (max-width:700px) {
+    .body{
+        width:100%;
+        margin-left: 0px;
+
+    }
+    .company-card{
+        width: 97%;
+    }
+    .stats{
+        display: none;
+    }
+    .details{
+        display: flex;
+        margin-top: 10px;
+
+    }
+    .displaynone2{
+        display: none;
+    }
+    .displaynone1,.detail1{
+        display: block;
+        margin-left: 0px;
+    }
+    
 }

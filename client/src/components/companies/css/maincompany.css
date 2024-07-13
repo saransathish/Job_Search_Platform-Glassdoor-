@@ -142,6 +142,9 @@ margin-top: 5px;
 
 
 @media (max-width: 900px) {
+    .innerdiv{
+        display: inline;
+    }
 .empdiv{
     display: block;
     width: 80%;
@@ -149,6 +152,13 @@ margin-top: 5px;
 }
 .searchbtn{
 margin-left: 20px;
+}
+.filterdiv{
+    width: 98%;
+    margin-bottom: 30px;
+}
+.companydiv{
+    width: 95%;
 }
 
 }

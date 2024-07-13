@@ -205,7 +205,8 @@
  .lockdata{
     display: flex;
     background-color: #F4F4F4;
-    height: 45px;
+    height: 100%;
+    padding-bottom: 5px;
     margin-left: 10px;
  }
  .lockimags{
@@ -355,6 +356,10 @@
         display: none;
         height:100px;
         width: 30%;
+    }
+    .myresume{
+        width: 60%;
+        text-align: center;
     }
 
 }
