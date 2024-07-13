@@ -190,7 +190,7 @@
 @media (max-width: 900px) {
     .companyheader{
         height: 100%;
-        padding-bottom: 10px;
+        padding-bottom: 50px;
         display:inline-block;
         /* height: 750px; */
     }
@@ -225,6 +225,14 @@
     .btndiv{
         width: 100%;
         padding: 0px;
+    }
+    .btn3{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+    }
+    .modal ,.modal2{
+        width: 95%;
     }
     
 }
