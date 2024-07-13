@@ -2,9 +2,9 @@
 .navbar1 {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 0px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,5 +118,11 @@
     }
     .seaicon{
         display:none
+    }
+    .navbar-logo{
+        margin-left: -50px;
+    }
+    .navbar-right{
+        margin-right: 0px;
     }
 }

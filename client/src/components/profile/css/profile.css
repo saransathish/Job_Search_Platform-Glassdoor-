@@ -337,16 +337,24 @@
 
     }
     .profile-main-middle{
-        width: 90%;
-        margin-left: 2%;
+        width: 85%;
+        margin-left: 0.5%;
     }
     .profile-main-left{
         width: 80%;
         margin-left: 1%;
     }
+    .profilemidhead{
+        justify-content: space-between;
+    }
+    .promidtxt{
+        width: 100%;
+
+    }
     .promidimg{
-        height:150px;
-        /* width: 150px; */
+        display: none;
+        height:100px;
+        width: 30%;
     }
 
 }

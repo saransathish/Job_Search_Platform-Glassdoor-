@@ -395,8 +395,8 @@ export const ComunityMain: React.FC = () => {
                         </div>
                     </div>
                     <div className='socialcon'>
-                        <img className='iconssty' src={share} alt="" />
-                        <div className='icontxt'>
+                        <img className='iconssty noshareic' src={share} alt="" />
+                        <div className='icontxt noshareic'>
                             Shares
                         </div>
                     </div>

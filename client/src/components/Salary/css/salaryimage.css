@@ -1,6 +1,6 @@
 .salimg{
     height:482px;
-    /* width:500px */
+    width:100%
 }
 .saltxt{
     margin-top: -5px;
@@ -181,4 +181,86 @@
 }
 .blotxt{
     font-size: 16px;
+}
+
+@media(max-width:720px){
+.salimg{
+    height:250px;
+}
+.saltxt{
+    height:100%;
+}
+.saltxtdiv{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: -320px;
+    height: 100%;
+
+}
+.salhe{
+    font-size: 22px;
+}
+.salnavdiv{
+    overflow-x: auto;
+}
+.salnavdiv::-webkit-scrollbar{
+    display:none
+}
+.inpu1,.inpu2,.inpu3{
+    font-size: 15px;
+    height:30px;
+    margin-bottom: 10px;
+}
+.inpu1{
+    width: 40%;
+    margin-left: 20px;
+}
+.inpu2{
+    width: 25%;
+}
+.inpu3{
+    margin-left: 1px;
+    width:15%;
+}
+.greydiv{
+    padding: 0px;
+    padding-top: 1px;
+
+}
+.bloghe{
+    margin-left: 5px;
+    font-size: 20px;
+}
+.blockcards{
+    display: inline;
+}
+.blockcard,.blogimgs{
+    width: 94%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.salscore{
+    margin-top: 120px;
+}
+.flexdivi{
+    display: inline;
+    padding: 0px;
+    margin-top: 0px;
+}
+.salchart{
+    width: 100%;
+    height: 250px;
+}
+.inlinediv{
+    width: 100%;
+    padding: 0px;
+
+}
+.dissal{
+    width: 100%;
+    margin-left: 0px;
+}
+.evendiv{
+    margin-top: 0px;
+}
 }
