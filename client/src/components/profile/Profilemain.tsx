@@ -128,13 +128,6 @@ export const Profilemain = () => {
                 height={100}
                 zoom={3} />
                 </div>
-                
-
-                // <img
-                //   className='profileimgs'
-                //   src={userProfile?.image || profile}
-                //   alt="Profile"
-                // />
               )}
               <div className="edit-icon" onClick={handleProfileImageClick}>
                 <GrEdit />

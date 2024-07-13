@@ -26,7 +26,7 @@ const GlassdoorFeatureComponent: React.FC = () => {
           <p className="card-name">Search company reviews</p>
         </div>
         <div className="card">
-          <img src={image4} alt="Feature 4" className="card-image" />
+          <img src={image4} alt="Feature 4" className="card-image fourthcard" />
           <p className="card-name">Compare salaries</p>
         </div>
       </div>

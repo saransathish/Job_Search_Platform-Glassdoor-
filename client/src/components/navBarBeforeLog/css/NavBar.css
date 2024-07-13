@@ -24,12 +24,7 @@
     transition: height 0.3s, width 0.3s;
 }
 
-/* .navbar-left-icon:hover {
-    height: 111px;
-    width: auto;
-} */
 
-/* Styling for the center part of the navbar */
 .navbar-center {
     margin-left: 80px;
     flex: 2;
@@ -168,4 +163,8 @@
         margin-left: 10px;
     }
 
+}
+
+@media (max-width: 1100px) {
+    
 }

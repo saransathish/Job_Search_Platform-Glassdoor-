@@ -8,7 +8,7 @@ const NewFeatureComponent: React.FC = () => {
         Find out what's new at Glassdoor
       </p>
       <div className="video-container">
-      <iframe src="https://player.vimeo.com/video/842965854?title=0&amp;portrait=0&amp;speed=0&amp;autoplay=1&amp;pip=0&amp;quality=undefined&amp;app_id=122963&amp;texttrack=undefined" width="608" height="342"  allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Glassdoor - Now You're Talking" data-ready="true"></iframe>
+      <iframe className='featurevid' src="https://player.vimeo.com/video/842965854?title=0&amp;portrait=0&amp;speed=0&amp;autoplay=1&amp;pip=0&amp;quality=undefined&amp;app_id=122963&amp;texttrack=undefined"   allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Glassdoor - Now You're Talking" data-ready="true"></iframe>
         {/* <video controls>
           <source src="your-video-url.mp4" type="video/mp4" />
           Your browser does not support the video tag.

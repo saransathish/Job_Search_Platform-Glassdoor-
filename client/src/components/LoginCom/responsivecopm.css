@@ -119,3 +119,14 @@
     
   }
   
+
+  @media (max-width: 700px) {
+    .comb{
+      margin-top: 10px;
+      width:100%;
+    }
+    .createaccount{
+      margin-left: 30px;
+    }
+
+  }

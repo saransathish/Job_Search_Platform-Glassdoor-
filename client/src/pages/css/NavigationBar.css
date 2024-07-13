@@ -93,3 +93,30 @@
     bottom: -4px; /* Adjust the position of the underline */
 
 }
+.iconnav{
+    height: 25px;
+    width: 25px;
+}
+
+.navigationbutton{
+    display: none;
+    background-color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+.extraone{
+    height:150px
+}
+
+@media(max-width:1100px){
+    .navigationbutton{
+        display:block
+    }
+    .bell{
+        display: none;
+    }
+    .seaicon{
+        display:none
+    }
+}

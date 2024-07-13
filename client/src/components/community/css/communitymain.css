@@ -209,4 +209,18 @@
     .communitycont{
         width:70%;
     }
+    
+}
+
+@media(max-width: 700px) {
+
+    .bowlcont{
+        display: none;
+    }
+    .communitycont{
+        width:90%;
+    }
+    .postcont{
+        display: none;
+    }
 }

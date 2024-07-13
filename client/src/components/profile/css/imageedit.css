@@ -21,10 +21,22 @@
 }
 
 .magnifier-result {
+  height: 300px;
+  width: 300px;
   position: absolute;
   left: calc(100% + 10px); /* Adjust as needed */
   top: 0;
   border: 1px solid #d4d4d4;
   background-repeat: no-repeat;
   pointer-events: none;
+}
+
+@media (max-width:720px) {
+  .magnifier-result{
+    height: 250px;
+    width: 250px;
+    margin-top: 150px;
+    margin-left: -190px;
+  }
+  
 }

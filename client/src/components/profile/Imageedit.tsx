@@ -62,8 +62,6 @@ const Magnifier: React.FC<MagnifierProps> = ({  src , zoom }) => {
         <div
           className="magnifier-result"
           style={{
-            width: 300,
-            height: 300,
             borderRadius:150,
             backgroundColor:'grey',
             backgroundImage: `url(${src})`,

@@ -1,76 +1,8 @@
-// import React, { useState } from 'react';
-// import { FaSearch, FaBell, FaUserCircle } from 'react-icons/fa';
-// import './css/NavigationBar.css';
-// import Logo from './images/glassdoor.png';
-
-// const NavigationBar: React.FC = () => {
-//     const [showPopup, setShowPopup] = useState(false);
-
-//     function handleButtonClick() {
-//         setShowPopup(!showPopup);
-//     }
-
-//     function handleProfileClick() {
-//         window.location.href = "/profilepage";
-//     }
-
-//     function handleLogoutClick() {
-//         window.location.href = "/";
-//     }
-//     function handlejobClick() {
-//         window.location.href = "/jobs";
-//     }
-//     function ComunityNav() {
-//         window.location.href = "/community";
-//     }
-
-//     function JobsNav() {
-//         window.location.href = "/jobs";
-//     }
-
-//     function ComapanyNav() {
-//         window.location.href = "/company";
-//     }
-
-//     function SalarisNav() {
-//         window.location.href = "/recomend";
-//     }
-
-//     return (
-//         <nav className="navbar1">
-//             <div className="navbar-logo">
-//                 <img src={Logo} alt="GlassDoor" />
-//             </div>
-//             <div className="navbar-center">
-//                 <a onClick={ComunityNav}>Community</a>
-//                 <a onClick={JobsNav}>Jobs</a>
-//                 <a onClick={ComapanyNav}>Companies</a>
-//                 <a onClick={SalarisNav}>Salaries</a>
-//             </div>
-//             <div className="navbar-right">
-//                 <FaSearch className="icon" />
-//                 <FaBell className="icon" />
-//                 <button className='nonebut' onClick={handleButtonClick}>
-//                     <FaUserCircle className="icon" />
-//                 </button>
-//                 {showPopup && (
-//                     <div className="popup-menu">
-//                         <button onClick={handleProfileClick}>Profile</button>
-//                         <button onClick={handlejobClick}>Job Activity</button>
-//                         <button onClick={handleLogoutClick}>Logout</button>
-//                     </div>
-//                 )}
-//             </div>
-//         </nav>
-//     );
-// }
-
-// export default NavigationBar;
-
 import React, { useState } from 'react';
 import { FaSearch, FaBell, FaUserCircle } from 'react-icons/fa';
 import './css/NavigationBar.css';
 import Logo from './images/glassdoor.png';
+import { IoReorderThreeOutline } from "react-icons/io5";
 
 interface NavigationBarProps {
     activeTab: string; 
@@ -78,9 +10,14 @@ interface NavigationBarProps {
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ activeTab }) => {
     const [showPopup, setShowPopup] = useState(false);
+    const [showPopup1, setShowPopup1] = useState(false);
+
 
     function handleButtonClick() {
         setShowPopup(!showPopup);
+    }
+    function handleButtonClick1() {
+        setShowPopup1(!showPopup1);
     }
 
     function handleProfileClick() {
@@ -119,16 +56,30 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ activeTab }) => {
                 <div className={activeTab === "Salary" ? "activenavtab" : "notactive"}><a  onClick={handleSalariesClick}>Salaries</a></div>
             </div>
             <div className="navbar-right">
-                <FaSearch className="icon" />
-                <FaBell className="icon" />
+                <FaSearch className="icon seaicon" />
+                <FaBell className="icon bell" />
                 <button className='nonebut' onClick={handleButtonClick}>
                     <FaUserCircle className="icon" />
+                </button>
+                <button className='navigationbutton' onClick={handleButtonClick1}>
+                <IoReorderThreeOutline className="iconnav"/>
+
                 </button>
                 {showPopup && (
                     <div className="popup-menu">
                         <button onClick={handleProfileClick}>Profile</button>
                         <button onClick={handleJobClick}>Job Activity</button>
                         <button onClick={handleLogoutClick}>Logout</button>
+                    </div>
+                )}
+
+                {showPopup1 && (
+                    <div className="popup-menu extraone">
+                        <button onClick={handleCommunityClick}>Community</button>
+                        <button onClick={handleJobClick}>Jobs</button>
+                        <button onClick={handleCompaniesClick}>Companies</button>
+                        <button onClick={handleSalariesClick}>Salaries</button>
+
                     </div>
                 )}
             </div>

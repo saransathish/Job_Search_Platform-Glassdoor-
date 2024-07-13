@@ -228,3 +228,14 @@ color: white;
 .addcomm:hover{
     background-color: rgb(136, 126, 126);
 }
+
+@media(max-width:700px){
+    .modal1{
+        width: 100%;
+        height: 450px;
+
+    }
+    .cancelcomm{
+        margin-left: 30%;
+    }
+}
