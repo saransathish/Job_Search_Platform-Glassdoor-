@@ -53,3 +53,17 @@
 .dataaddbtn:hover{
     background-color: green;
 }
+@media (max-width:700px) {
+    /* .dataaddingdiv{
+        background-color: green;
+    } */
+    .textinputs{
+        width: 110%;
+
+    }
+    .textareainp{
+        width: 118%;
+        height:80px
+
+    }
+}

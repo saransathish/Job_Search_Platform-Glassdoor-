@@ -232,7 +232,18 @@
         
     }
     .modal ,.modal2{
-        width: 95%;
+        width: 98%;
+        padding: 0px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .databtns{
+        width:98%;
+        padding:0px;
+    }
+    .databtn{
+        padding: 0px;
+        width: 98%;
     }
     
 }

@@ -136,7 +136,7 @@
         justify-content: flex-end;
     }
     .signin-button {
-        margin-right: -20px;
+        margin-right: 0px;
         display: flex;
         align-items: center;
         background-color: black;
