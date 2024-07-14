@@ -20,9 +20,9 @@
 .search-bar1::before {
     border-radius: 2px solid green;
 }
-.search-bar1 .search-icon {
+ .search-icon {
     margin-right: 10px;
-    margin-left: -50px;
+    margin-left: 0px;
     color: #666;
 }
 
@@ -96,8 +96,8 @@
 .butn{
     background-color:#f9f0f0;
     border-radius: 20px;
-    width:auto ;
-    height: 30px;
+    /* width:auto ; */
+    /* height: 30px; */
     border: none;
     padding-left: 15px;
     padding-right: 15px;
@@ -217,4 +217,70 @@
   }
   .lowspace{
     margin-bottom: 40px;
+  }
+
+  @media (max-width:800px) {
+    .search-bar1{
+        display: inline;
+        width: 95%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .search-input-wrapper{
+        height: 35px;
+        border-radius: 30px;
+        margin-bottom: 10px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        
+    }
+    .location-input-wrapper{
+        height: 35px;
+        border-radius: 30px;
+        box-shadow: 0 3px 4px rgba(0, 0, 0.1, 0.1);
+
+
+    }
+    .seaarchin{
+        display: inline;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .search-icon{
+        margin-left: 20px;
+    }
+    .location-icon{
+        margin-left: 10px;
+    }
+    .filterbuttons{
+        display: flex;
+        overflow-x: auto;
+        width: 95%;
+        padding: 0px;
+        height: 100%;
+        /* margin-bottom: 10px; */
+    }
+    .filterbuttons::-webkit-scrollbar{
+        display: none;
+    }
+    .nobuton{
+        display: none;
+    }
+    .butn{
+        border-radius: 5px;
+        width: 130px;
+        padding: 0px;
+        margin: 0px;
+        margin-left: 10px;
+        margin-top: 10px;
+        /* background-color: green; */
+    }
+    .jobscount{
+        margin-top: 10px;
+    }
+    .rating-popup{
+    position: absolute;
+    margin-left: 100px;
+
+    }
   }

@@ -1,9 +1,13 @@
+.maincnt{
+    display: flex;
+}
 .smallcards{
     /* background-color: green; */
     background-color: white;
     margin-left: 20px;
 }
 .smallcard{
+    width: 40%;
     background-color: #ffffff;
     height:165px;
     border-style: solid;
@@ -18,13 +22,22 @@
 .smallcards::-webkit-scrollbar {
     display: none;
 }
+.largeconatainer{
+    width: 80%;
+    padding: 20px 0px 10px 10px;
+}
+.largecard{
+    width: 90%;
+    padding: 0px 0px 10px 10px;
+
+}
 
 @media (max-width: 1100px) {
 .smallcards{
     display: none;
 }
 .largeconatainer{
-    width: 100%;
+    width: 95%;
     /* background-color: blue; */
     padding: 0px;
     
@@ -39,3 +52,80 @@
     padding: 0px;
 }
 }
+
+@media (max-width: 700px) {
+    .maincnt{
+        display: inline;
+    }
+    .smallcards{
+        display: block;
+        width: 94%;
+        height:500px;
+    }
+    .smallcard{
+        height:170px
+    }
+    .largeconatainer{
+        display: none;
+        width: 100%;
+        /* background-color: blue; */
+        padding: 0px;
+        
+        }
+    
+    .maincnt{
+        justify-content: center;
+        background-color: #f0f0f0,
+    }
+    .largecard{
+        display: none;
+        width:100%;
+        padding: 0px;
+    }
+
+    }
+
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      .popup-content {
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: 95%;
+        max-width: 700px;
+        max-height: 550px;
+        overflow-y: auto;
+      }
+      .popup-content::-webkit-scrollbar{
+        display: none;
+      }
+      
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      
+      @media (min-width: 700px) {
+        .popup-overlay {
+          display: none;
+        }
+      }
+      

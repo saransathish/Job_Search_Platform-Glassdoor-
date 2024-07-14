@@ -155,19 +155,17 @@ const JobPage: React.FC = () => {
             <div className="search-bar1">
                 <div className="search-input-wrapper">
                     <FaSearch className="search-icon" />
-                    <input
+                    <input className='seaarchin'
                         type="text"
                         placeholder="Search job title..."
                         value={searchTerm}
                         onChange={handleSearchChange}
                     />
-                    {searchTerm && (
-                        <FaTimes className="clear-icon" onClick={handleClearSearch} />
-                    )}
                 </div>
                 <div className="location-input-wrapper">
                     <FaMapMarkerAlt className="location-icon" />
                     <input
+                    className='seaarchin'
                         type="text"
                         placeholder="Location..."
                         value={locationTerm}
@@ -217,7 +215,7 @@ const JobPage: React.FC = () => {
                         <button className='butn' onClick={handleRatingFilterClick}>
                             Company Rating 
                         </button>
-                        <button className='butn' onClick={handleDatePostedFilterClick}>
+                        <button className='butn nobuton' onClick={handleDatePostedFilterClick}>
                             Date Posted
                         </button>
                         <button className='butn' onClick={handleClearFilters}>

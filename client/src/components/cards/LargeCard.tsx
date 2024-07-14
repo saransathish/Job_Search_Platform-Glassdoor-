@@ -56,7 +56,9 @@ export const LargeCard = (props: details) => {
                         <div className="inficon">
                             <span>ⓘ</span></div>
                         <div className="infcnt">
-                            <p>If an employer includes a salary or salary range on their job, we display it as an "Employer Estimate". If a job has no salary data, Glassdoor displays a "Glassdoor Estimate" if available. To learn more about "Glassdoor Estimates," see our FAQ page.</p>
+                            <p>If an employer includes a salary or salary range on their jobs <span className="infnoinles">
+                            , we display it as an "Employer Estimate". If a job has no salary data, Glassdoor displays a "Glassdoor Estimate" if available. To learn more about "Glassdoor Estimates," see our FAQ page.
+                                </span> </p>
                         </div>
                     </div>
                 </div>
@@ -64,9 +66,10 @@ export const LargeCard = (props: details) => {
                 <div className="lastdiv">
                     <div className="easyapply">
                         <a href={props.some.applicationUrl}>
-                            <button className="easbtn">
+                            <center>
+                            <button className="easbtn desiphn">
                                 {props.some.easyApply ? "Easy Apply" : "Apply Now"}
-                            </button>
+                            </button></center>
                         </a>
                     </div>
                 </div>

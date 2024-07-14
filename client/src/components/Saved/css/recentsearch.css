@@ -97,3 +97,37 @@
 .svgpro{
     margin-top: 20px;
 }
+
+@media (max-width:700px) {
+    .rectsercard{
+        display: inline;
+        /* padding: 0px; */
+        height: 100%;
+        /* margin-left: 5%; */
+        padding-left: 10%;
+    }
+    .maind{
+        display: inline;
+        height: 100%;
+        width: 100%;
+
+    }
+    .probox{
+        width: 91.5%;
+        height: 100%;
+        margin-left: 2%;
+    }
+    .serchcom{
+        margin-top: 10px;
+        width: 96%;
+        margin-left: 2%;
+        height: 100%;
+        margin-bottom: 15px;
+    }
+    .serchcard{
+        margin-left: 10%;
+        /* width: 70%; */
+        width: 300px;
+        margin-bottom: 10px;
+    }
+}
