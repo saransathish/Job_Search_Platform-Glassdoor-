@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './css/recentsearch.css'
 import { api, Users } from '../../models/model';
+import profile from './css/images/profileimage.jpg'
 export const RecentSearch = () => {
   const [username, setUserName] = useState<Users | null>(null);
   useEffect(() => {
@@ -57,9 +58,9 @@ export const RecentSearch = () => {
         </div>
     </div>
     <div className='probox'>
-        <center>
-        <svg  width="88" height="88" viewBox="0 0 60 60"><g fill="none"><path d="M7.7 50C2.9 44.7 0 37.7 0 30 0 13.4 13.4 0 30 0s30 13.4 30 30c0 7.7-2.9 14.7-7.7 20-.7-1.8-1.6-3.8-2.7-4.9-2.9-2.8-11.1-4.6-12.5-6.3-1.8-1.5-1.2-6.2-.9-7.2.7-2.8 3.6-5 3.6-13.1 0-5.2-3.4-9.9-9.8-9.9s-9.8 4.7-9.8 9.9c0 8.1 2.9 10.3 3.6 13.1.3 1 .9 5.7-.9 7.2-1.4 1.7-9.6 3.5-12.5 6.3-1.1 1.1-2 3.1-2.7 4.9z" fill="#dee0e3"></path><circle cx="30" cy="30" r="29.5" stroke="#eaeaea"></circle></g></svg>
-        </center>
+    <center>
+            <img className='profilei' src= {username?.image || profile} />
+          </center>
         <center className='boldtxt'>Welcome to GlassDoor , {username?.username} !</center>
         <hr className='colorgrey'/>
         <div className='prolas'>
