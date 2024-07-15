@@ -13,6 +13,7 @@ import { S3Service } from 'src/company/upload.service';
 import { promises } from 'dns';
 import { UserData } from '@prisma/client';
 import { GetUserDataById } from './dto/input/getdataById.input';
+import { UserName } from './dto/input/username.input';
 
 
 @Controller('users')
@@ -145,5 +146,10 @@ export class UsersController {
     return this.userservice.getUsersDataById(userid);
   }
 
+  @Get('getusername')
+  @ApiCreatedResponse({ type: User })
+  async getusername():Promise<User>{
+    return this.userservice.getusername();
+  }
 
 }

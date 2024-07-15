@@ -9,6 +9,7 @@ import { JobId } from './dto/input/jobid.input';
 import { S3Service } from 'src/company/upload.service';
 import { UserData } from '@prisma/client';
 import { GetUserDataById } from './dto/input/getdataById.input';
+import { UserName } from 'aws-sdk/clients/directoryservice';
 
 
 
@@ -208,5 +209,9 @@ export class UsersService {
         async getUsersDataById(userid:GetUserDataById):Promise<User>{
             return await this.prisma.prismaClient.user.findUnique({where:{userId:userid.userId}})
 
+        }
+        async getusername():Promise<User>{
+            const id = this.getuserid()
+            return id
         }
 }
