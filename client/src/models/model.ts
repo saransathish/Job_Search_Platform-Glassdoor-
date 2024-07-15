@@ -65,6 +65,6 @@ export interface CommunityComments{
 
 }
 
-export const api = 'http://localhost:3000/'
+// export const api = 'http://localhost:3000/'
 
-// export const api = 'https://glassdoor.koyeb.app/'
+export const api = 'https://glassdoor.koyeb.app/'
