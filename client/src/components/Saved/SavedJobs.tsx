@@ -178,7 +178,7 @@ export const SavedJobs: React.FC = () => {
         </div>
       </div>
       {isPopupOpen && (
-        <div className="popup-overlay">
+        <div className="popup-overlay" >
           <div className="popup-content">
             <button onClick={closePopup} className="close-button">&times;</button>
             {selectedCardContent && <> <div className="largecontain largecontain1">
