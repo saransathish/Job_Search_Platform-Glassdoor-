@@ -21,85 +21,88 @@ import { UserName } from './dto/input/username.input';
 
 export class UsersController {
 
-    constructor(
-      private userservice: UsersService,
-      private readonly s3Service: S3Service  ) {}
+  constructor(
+    private userservice: UsersService,
+    private readonly s3Service: S3Service) { }
 
-    @Get()
-    @ApiCreatedResponse({ type: [User] })
-    findAll(){
-        return this.userservice.getallusers();
-    }
+  @Get()
+  @ApiCreatedResponse({ type: [User] })
+  findAll() {
+    return this.userservice.getallusers();
+  }
 
-    // @Get('bookmark')
-    // @ApiCreatedResponse({ type:  })
-    // bookmark(){
-    //     return this.userservice.getallbookmarks();
-    // }
-    @Post()
-    @ApiCreatedResponse({ type: User })
-    async createUser(@Body() createUser: CreateUserInput) {
-      return this.userservice.createUser(createUser);
-    }
+  // @Get('bookmark')
+  // @ApiCreatedResponse({ type:  })
+  // bookmark(){
+  //     return this.userservice.getallbookmarks();
+  // }
+
+  @Post()
+  @ApiCreatedResponse({ type: User })
+  async createUser(@Body() createUser: CreateUserInput) {
+    return this.userservice.createUser(createUser);
+  }
 
 
-    @Post('exists')
-    @ApiOkResponse({ type: Boolean })
-    async userExists(@Body() userexit: Userexist): Promise<boolean> {
-      return this.userservice.userExists(userexit);
-      
-    }
+  @Post('exists')
+  @ApiOkResponse({ type: Boolean })
+  async userExists(@Body() userexit: Userexist): Promise<boolean> {
+    return this.userservice.userExists(userexit);
 
-    @Delete()
-    @ApiOkResponse({type:Number})
-    async deleteallusers(){
-        return this.userservice.deleteallusers();
-    }
+  }
 
-    @Post('emailpassword')
-    @ApiOkResponse({ type: Boolean })
-    async checkMailPassword(@Body() emailpass:Emailpass){
-    const out= this.userservice.checkMailPassword(emailpass);
+  @Delete()
+  @ApiOkResponse({ type: Number })
+  async deleteallusers() {
+    return this.userservice.deleteallusers();
+  }
+
+  @Post('emailpassword')
+  @ApiOkResponse({ type: Boolean })
+  async checkMailPassword(@Body() emailpass: Emailpass) {
+    const out = this.userservice.checkMailPassword(emailpass);
     return out;
   }
 
   @Post('addbookmark')
-    @ApiOkResponse({ type: Boolean })
-    async addbookmark(@Body() jobid:JobId){
+  @ApiOkResponse({ type: Boolean })
+  async addbookmark(@Body() jobid: JobId) {
     return this.userservice.addbookmark(jobid);
   }
 
   @Post('removebookmark')
-    @ApiOkResponse({ type: Boolean })
-    async removebookmark(@Body() jobid:JobId){
+  @ApiOkResponse({ type: Boolean })
+  async removebookmark(@Body() jobid: JobId) {
     return this.userservice.removeBookmark(jobid);
   }
 
   @Get('userjobsbookmark')
   @ApiOkResponse({ type: [Job] })
-  async userjobsbookmark(){
+  async userjobsbookmark() {
     return this.userservice.bookmark();
   }
 
   @Get('bookmarkjobsid')
   @ApiOkResponse({ type: [String] })
-  async bookmarkjobsid(){
+  async bookmarkjobsid() {
     return this.userservice.bookmarkjobsid();
   }
+
   @Get('aboutUsers')
   @ApiOkResponse({ type: User })
-  async aboutUsers(){
+  async aboutUsers() {
     return this.userservice.aboutUsers();
   }
+
   @Get('UsersDatas')
-  @ApiOkResponse({ })
-  async UsersDatas():Promise<UserData[]>{
+  @ApiOkResponse({})
+  async UsersDatas(): Promise<UserData[]> {
     return this.userservice.UsersDatas();
   }
 
   @Post('updateuser')
   @ApiOkResponse({ type: User })
-  async updateusers(@Body() data:User){
+  async updateusers(@Body() data: User) {
     return this.userservice.updateusers(data);
   }
 
@@ -109,13 +112,12 @@ export class UsersController {
   @UseInterceptors(FileInterceptor('file'))
   async updateResume(
     @UploadedFile() file: Express.Multer.File
-        ) :Promise<User> {
+  ): Promise<User> {
     let resumeUrl: string | null = null;
-
     if (file) {
       const user = await this.userservice.getuserid()
       const userid = (await user).userId;
-      const key = await this.s3Service.uploadFile(file,userid);
+      const key = await this.s3Service.uploadFile(file, userid);
       resumeUrl = this.s3Service.getFileupload(key);
     }
     return this.userservice.updateResume(resumeUrl)
@@ -127,14 +129,14 @@ export class UsersController {
   @UseInterceptors(FileInterceptor('file'))
   async updateImage(
     @UploadedFile() file: Express.Multer.File
-        ):Promise<User> {
+  ): Promise<User> {
     let imageurl: string | null = null;
 
     if (file) {
       const user = await this.userservice.getuserid()
       const userid = (await user).userId;
 
-      const key = await this.s3Service.uploadFile(file,userid);
+      const key = await this.s3Service.uploadFile(file, userid);
       imageurl = this.s3Service.getFileupload(key);
     }
     return this.userservice.updateImage(imageurl)
@@ -142,13 +144,13 @@ export class UsersController {
 
   @Post('getUsersDataById')
   @ApiCreatedResponse({ type: User })
-  async getUsersDataById(@Body() userid:GetUserDataById):Promise<User>{
+  async getUsersDataById(@Body() userid: GetUserDataById): Promise<User> {
     return this.userservice.getUsersDataById(userid);
   }
 
   @Get('getusername')
   @ApiCreatedResponse({ type: User })
-  async getusername():Promise<User>{
+  async getusername(): Promise<User> {
     return this.userservice.getusername();
   }
 

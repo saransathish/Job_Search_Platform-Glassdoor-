@@ -31,6 +31,4 @@ export class JobsController {
     jobSearchByTitle(@Body() getpreferredjob:GetPreferredJob): Promise<Job[]>{
         return this.jobsservice.jobSearchByTitle(getpreferredjob)
     }
-
-
 }

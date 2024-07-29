@@ -15,6 +15,4 @@ import { ApiProperty } from '@nestjs/swagger';
         @IsString()
         @ApiProperty()
         password: string;
-
-
     }

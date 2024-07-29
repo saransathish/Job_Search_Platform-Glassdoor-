@@ -2,7 +2,6 @@
     display: flex;
 }
 .smallcards{
-    /* background-color: green; */
     background-color: white;
     margin-left: 20px;
 }
@@ -82,7 +81,6 @@
         width:100%;
         padding: 0px;
     }
-
     }
 
     .popup-overlay {

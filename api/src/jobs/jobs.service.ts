@@ -8,62 +8,53 @@ import { Job } from 'src/model/jobs';
 @Injectable()
 export class JobsService {
 
-    constructor(private prisma:PrismaService){}
+    constructor(private prisma: PrismaService) { }
 
 
-    async getAllJobs(){
+    async getAllJobs() {
         return this.prisma.prismaClient.job.findMany({
-        include:{
-            company:true
-        }
+            include: {
+                company: true
+            }
         })
     }
 
-    async jobSearchByLocation(getpreferredlocation:GetPreferredLocation):Promise<Job[]> {
-        const jobs :Job[] = await this.prisma.prismaClient.job.findMany({
-            where:{
-                location:{
-                    contains:getpreferredlocation.location,
+    async jobSearchByLocation(getpreferredlocation: GetPreferredLocation): Promise<Job[]> {
+        const jobs: Job[] = await this.prisma.prismaClient.job.findMany({
+            where: {
+                location: {
+                    contains: getpreferredlocation.location,
                     mode: 'insensitive',
                 }
             },
-            include:{
-                company:true
+            include: {
+                company: true
             }
         })
 
         return jobs
-
     }
-
-
-    async jobSearchByTitle(getpreferredjob:GetPreferredJob):Promise<Job[]> {
-        const jobs :Job[] = await this.prisma.prismaClient.job.findMany({
-            where:{
-                jobTitle:{
-                    contains:getpreferredjob.jobTitle,
+    async jobSearchByTitle(getpreferredjob: GetPreferredJob): Promise<Job[]> {
+        const jobs: Job[] = await this.prisma.prismaClient.job.findMany({
+            where: {
+                jobTitle: {
+                    contains: getpreferredjob.jobTitle,
                     mode: 'insensitive',
                 }
             },
-            include:{
-                company:true
+            include: {
+                company: true
             }
         })
-
         return jobs
-
     }
-
-
     // async updatejobsdata(){
     //     const fs = require('fs');
     //     const jobData = JSON.parse(fs.readFileSync('finaljobs.json', 'utf8'));
     //     console.log("upadting")
     //     for (const jo of jobData) {
-       
     //         await this.prisma.prismaClient.job.create({
     //             data:{
- 
     //                 companyId:uuid(),
     //                 companyName :jo.companyName,
     //                 iconUrl :jo.iconUrl,
@@ -78,19 +69,12 @@ export class JobsService {
     //                 clearanceRequired    :jo.clearanceRequired,
     //                 salaryCurrency       :jo.salaryCurrency,
     //                 jobVacancies :jo.jobVacancies,
-
     //                 }
-
-
     //             }
     //         );
     //         console.log('Data added successfully');
     //     }
     //     return this.prisma.prismaClient.job.findMany({})
-    
     // }
-
-
-
 
 }

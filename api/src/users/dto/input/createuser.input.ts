@@ -40,8 +40,4 @@ import { ApiProperty } from '@nestjs/swagger';
         @IsOptional()
         @ApiProperty({ required: false })
         yearsOfExperience : number;
-
-
-
-
     }

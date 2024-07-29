@@ -12,206 +12,222 @@ import { GetUserDataById } from './dto/input/getdataById.input';
 import { UserName } from 'aws-sdk/clients/directoryservice';
 
 
-
 @Injectable()
 export class UsersService {
 
-    constructor(private prisma:PrismaService,
-        private readonly s3Service: S3Service){}
+    constructor(private prisma: PrismaService,
+        private readonly s3Service: S3Service) { }
 
-    async createUser(createuserdata:CreateUserInput): Promise<User>{
-        const newuser :User = {
-            userId : uuid(),
+    async createUser(createuserdata: CreateUserInput): Promise<User> {
+        const newuser: User = {
+            userId: uuid(),
             email: createuserdata.email,
-            password:createuserdata.password,
-            username:createuserdata.username,
-            location:createuserdata.location,
-            preferredJobPosition:createuserdata.preferedProfession,
-            age:createuserdata.age,
-            yearsOfExperience:createuserdata.yearsOfExperience
+            password: createuserdata.password,
+            username: createuserdata.username,
+            location: createuserdata.location,
+            preferredJobPosition: createuserdata.preferedProfession,
+            age: createuserdata.age,
+            yearsOfExperience: createuserdata.yearsOfExperience
         }
-        
-        const user = await this.prisma.prismaClient.user.create({
-            data :newuser
-          });
 
-          await this.prisma.prismaClient.userData.create({data:{
-            userId:user.userId,
-        }});
+        const user = await this.prisma.prismaClient.user.create({
+            data: newuser
+        });
+
+        await this.prisma.prismaClient.userData.create({
+            data: {
+                userId: user.userId,
+            }
+        });
 
         await this.prisma.prismaClient.log.deleteMany();
-        await this.prisma.prismaClient.log.create({data:{
-            isLogin:true,
-            userEmail:user.email
-        }})
+        await this.prisma.prismaClient.log.create({
+            data: {
+                isLogin: true,
+                userEmail: user.email
+            }
+        })
 
-        return  user;
+        return user;
     }
 
-    async getallusers():Promise<User[]> {
+    async getallusers(): Promise<User[]> {
         return this.prisma.prismaClient.user.findMany({})
     }
 
-    async UsersDatas():Promise<UserData[]> {
-        return this.prisma.prismaClient.userData.findMany({include:{user:true}})
+    async UsersDatas(): Promise<UserData[]> {
+        return this.prisma.prismaClient.userData.findMany({ include: { user: true } })
     }
 
-    async getallbookmarks(){
+    async getallbookmarks() {
         return this.prisma.prismaClient.userData.findMany({})
     }
 
-    async userExists(userexist:Userexist):Promise<boolean | null>{
-        
-        const user = this.prisma.prismaClient.user.findUnique({where:{
-            email:userexist.email,
-        }})
-        if( await(user) === null){
+    async userExists(userexist: Userexist): Promise<boolean | null> {
+
+        const user = this.prisma.prismaClient.user.findUnique({
+            where: {
+                email: userexist.email,
+            }
+        })
+        if (await (user) === null) {
             return false;
-          }
+        }
 
         await this.prisma.prismaClient.log.deleteMany();
-        await this.prisma.prismaClient.log.create({data:{
-            isLogin:true,
-            userEmail:userexist.email
-        }})
-          
-          return true;
+        await this.prisma.prismaClient.log.create({
+            data: {
+                isLogin: true,
+                userEmail: userexist.email
+            }
+        })
+
+        return true;
     }
-    async deleteallusers(){
+    async deleteallusers() {
         return this.prisma.prismaClient.user.deleteMany({})
     }
 
-    async checkMailPassword(emailpass :Emailpass ){
-        const user = await this.prisma.prismaClient.user.findUnique({where:{email:emailpass.email}})
-        if( await(user) === null){
+    async checkMailPassword(emailpass: Emailpass) {
+        const user = await this.prisma.prismaClient.user.findUnique({ where: { email: emailpass.email } })
+        if (await (user) === null) {
             return false;
-          }
-        if(await(user.password === emailpass.password)){
-           await this.prisma.prismaClient.log.deleteMany();
-            await this.prisma.prismaClient.log.create({data:{
-            isLogin:true,
-            userEmail:emailpass.email
-        }})
+        }
+        if (await (user.password === emailpass.password)) {
+            await this.prisma.prismaClient.log.deleteMany();
+            await this.prisma.prismaClient.log.create({
+                data: {
+                    isLogin: true,
+                    userEmail: emailpass.email
+                }
+            })
 
             return true;
         }
 
-        return false;}
+        return false;
+    }
 
-        async getuserid(){
-            const user = await this.prisma.prismaClient.log.findMany({include:{
-                user:true
-            }})
-            const users = await(user[0])
-            return users.user
-        }
+    async getuserid() {
+        const user = await this.prisma.prismaClient.log.findMany({
+            include: {
+                user: true
+            }
+        })
+        const users = await (user[0])
+        return users.user
+    }
 
-        async bookmark(){
-            const id = this.getuserid()
-            const jobsid = this.prisma.prismaClient.userData.findUnique({where:{
-                userId:(await id).userId,
-            }})
-            const ids = (await jobsid).bookmarksJobsId
-            return this.getJobsByIds(ids)
-        }
+    async bookmark() {
+        const id = this.getuserid()
+        const jobsid = this.prisma.prismaClient.userData.findUnique({
+            where: {
+                userId: (await id).userId,
+            }
+        })
+        const ids = (await jobsid).bookmarksJobsId
+        return this.getJobsByIds(ids)
+    }
 
-        async  getJobsByIds(jobids: string[]) {
-              const jobs = await this.prisma.prismaClient.job.findMany({
-                where: {
-                  jobId: {
+    async getJobsByIds(jobids: string[]) {
+        const jobs = await this.prisma.prismaClient.job.findMany({
+            where: {
+                jobId: {
                     in: jobids
-                  },
-                  
                 },
-                include:{
-                    company:true
+
+            },
+            include: {
+                company: true
+            }
+        });
+        return jobs;
+
+    }
+    async bookmarkjobsid() {
+        const id = this.getuserid()
+        const userid = (await id).userId
+        const data = this.prisma.prismaClient.userData.findUnique({
+            where: { userId: userid },
+
+        })
+        return (await data).bookmarksJobsId
+    }
+    async addbookmark(jobid: JobId) {
+        const id = this.getuserid()
+        const userid = (await id).userId
+        return this.prisma.prismaClient.userData.update({
+            where: { userId: userid },
+            data: {
+                bookmarksJobsId: {
+                    push: jobid.jobId,
                 }
-              });
-              return jobs;
-            
-        } 
-        async bookmarkjobsid(){
-            const id = this.getuserid()
-            const userid = (await id).userId
-            const data = this.prisma.prismaClient.userData.findUnique({
-                where: {userId:userid},
-                
-            })
-            return (await data).bookmarksJobsId
-        }
-        async addbookmark(jobid:JobId){
-            const id = this.getuserid()
-            const userid = (await id).userId
-            return this.prisma.prismaClient.userData.update({
-                where: {userId:userid},
-                data:{bookmarksJobsId:{
-                    push:jobid.jobId,
-                }}
-            })
-        }
-        async removeBookmark(jobid: JobId) {
-            const id = this.getuserid();
-            const userid = (await id).userId;
-        
-            return this.prisma.prismaClient.userData.update({
-                where: { userId: userid },
-                data: {
-                    bookmarksJobsId: {
-                        set: (await this.prisma.prismaClient.userData.findUnique({
-                            where: { userId: userid },
-                            select: { bookmarksJobsId: true },
-                        })).bookmarksJobsId.filter((bookmarkId) => bookmarkId !== jobid.jobId),
-                    },
+            }
+        })
+    }
+    async removeBookmark(jobid: JobId) {
+        const id = this.getuserid();
+        const userid = (await id).userId;
+
+        return this.prisma.prismaClient.userData.update({
+            where: { userId: userid },
+            data: {
+                bookmarksJobsId: {
+                    set: (await this.prisma.prismaClient.userData.findUnique({
+                        where: { userId: userid },
+                        select: { bookmarksJobsId: true },
+                    })).bookmarksJobsId.filter((bookmarkId) => bookmarkId !== jobid.jobId),
                 },
-            });
-        }
+            },
+        });
+    }
 
-        async aboutUsers(){
-            const id = this.getuserid();
-            return id;
+    async aboutUsers() {
+        const id = this.getuserid();
+        return id;
+    }
+    async updateusers(data: User) {
+        return this.prisma.prismaClient.user.update({
+            where: { userId: data.userId },
+            data: data
+        })
+    }
+    async updateResume(resumeurl: string): Promise<User> {
+        const id = this.getuserid()
+        const userid = (await id).userId
+        if ((await id).resume) {
+            const urlParts = (await id).resume.split('/');
+            const keyIndex = urlParts.findIndex(part => part === 'profile');
+            const key = urlParts.slice(keyIndex).join('/');
+            await this.s3Service.deleteFile(key);
         }
-        async updateusers(data:User){
-            return this.prisma.prismaClient.user.update({
-                where:{userId:data.userId},
-                data:data
-            })
-        }
-        async updateResume(resumeurl:string): Promise<User>{
-            const id = this.getuserid()
-            const userid = (await id).userId
-            if ((await id).resume) {
-                const urlParts = (await id).resume.split('/');
-                const keyIndex = urlParts.findIndex(part => part === 'profile');
-                const key = urlParts.slice(keyIndex).join('/');
-                await this.s3Service.deleteFile(key);
-              }
-            return await this.prisma.prismaClient.user.update({
-                where:{userId:userid},
-                data:{resume:resumeurl}
-            })
-        }
+        return await this.prisma.prismaClient.user.update({
+            where: { userId: userid },
+            data: { resume: resumeurl }
+        })
+    }
 
-        async updateImage(imageurl:string) : Promise<User>{
-            const id = this.getuserid()
-            const userid = (await id).userId
-            if ((await id).image) {
-                const urlParts = (await id).image.split('/');
-                const keyIndex = urlParts.findIndex(part => part === 'profile');
-                const key = urlParts.slice(keyIndex).join('/');
-                await this.s3Service.deleteFile(key);
-              }
-            return await this.prisma.prismaClient.user.update({
-                where:{userId:userid},
-                data:{image:imageurl}
-            })
+    async updateImage(imageurl: string): Promise<User> {
+        const id = this.getuserid()
+        const userid = (await id).userId
+        if ((await id).image) {
+            const urlParts = (await id).image.split('/');
+            const keyIndex = urlParts.findIndex(part => part === 'profile');
+            const key = urlParts.slice(keyIndex).join('/');
+            await this.s3Service.deleteFile(key);
         }
+        return await this.prisma.prismaClient.user.update({
+            where: { userId: userid },
+            data: { image: imageurl }
+        })
+    }
 
-        async getUsersDataById(userid:GetUserDataById):Promise<User>{
-            return await this.prisma.prismaClient.user.findUnique({where:{userId:userid.userId}})
+    async getUsersDataById(userid: GetUserDataById): Promise<User> {
+        return await this.prisma.prismaClient.user.findUnique({ where: { userId: userid.userId } })
 
-        }
-        async getusername():Promise<User>{
-            const id = this.getuserid()
-            return id
-        }
+    }
+    async getusername(): Promise<User> {
+        const id = this.getuserid()
+        return id
+    }
 }
