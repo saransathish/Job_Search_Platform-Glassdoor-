@@ -1,6 +1,6 @@
 # Job_Search_Platform-GlassDoor
 
-Welcome to the Job Search Platform, a comprehensive job search solution inspired by Glassdoor. This platform allows users to search for jobs, view company details, and apply for positions, all within a user-friendly interface.
+Welcome to the Job Search Platform, a comprehensive job search solution inspired by Glassdoor. This platform allows users to search for jobs, view company details, and apply for positions, all within a user-friendly interface. 
 
 ## Table of Contents
 
