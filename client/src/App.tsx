@@ -12,11 +12,13 @@ import JobPage from './pages/Jobs'
 import { Profile } from './pages/Profile'
 import Magnifier from './components/profile/Imageedit'
 
+import { FaroRoutes } from '@grafana/faro-react';
+
 
 function App() {
   return (
     <>
-      <Routes>
+<FaroRoutes>
         <Route path="/" element={<BeforeLog />} />
         <Route path="/community" element={<Community />} />
         <Route path="/recomend" element={<Recommended />} />
@@ -31,7 +33,7 @@ function App() {
         zoom={3}
         />} />
 
-      </Routes>
+      </FaroRoutes>
     </>
   )
 }

@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
+    "@grafana/faro-react": "^1.10.2",
+    "@grafana/faro-web-tracing": "^1.10.2",
     "@mui/icons-material": "^5.15.20",
     "@mui/joy": "^5.0.0-beta.36",
     "@mui/material": "^5.15.20",
