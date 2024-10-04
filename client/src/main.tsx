@@ -7,7 +7,7 @@ import client from './apollo-client.ts';
 import { ApolloProvider } from '@apollo/client';
 
 import { createRoutesFromChildren, matchRoutes, Routes, useLocation, useNavigationType } from 'react-router-dom';
-import { createReactRouterV6Options, getWebInstrumentations, initializeFaro, ReactIntegration, ReactRouterVersion } from '@grafana/faro-react';
+import { createReactRouterV6Options, getWebInstrumentations, initializeFaro, ReactIntegration } from '@grafana/faro-react';
 
 initializeFaro({
   url: 'https://faro-collector-prod-au-southeast-1.grafana.net/collect/6b658835e372147dfc4e56d894a8b496',
