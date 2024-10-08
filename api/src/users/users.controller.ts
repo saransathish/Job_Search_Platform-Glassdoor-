@@ -11,7 +11,7 @@ import { JobId } from './dto/input/jobid.input';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { S3Service } from 'src/company/upload.service';
 import { promises } from 'dns';
-import { UserData } from '@prisma/client';
+// import { UserData } from '@prisma/client';
 import { GetUserDataById } from './dto/input/getdataById.input';
 import { UserName } from './dto/input/username.input';
 
@@ -97,7 +97,7 @@ export class UsersController {
 
   @Get('UsersDatas')
   @ApiOkResponse({})
-  async UsersDatas(): Promise<UserData[]> {
+  async UsersDatas() {
     return this.userservice.UsersDatas();
   }
 

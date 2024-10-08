@@ -7,7 +7,7 @@ import { Userexist } from './dto/input/userexist.input';
 import { Emailpass } from './dto/input/emailpass.input';
 import { JobId } from './dto/input/jobid.input';
 import { S3Service } from 'src/company/upload.service';
-import { UserData } from '@prisma/client';
+// import { UserData } from '@prisma/client';
 import { GetUserDataById } from './dto/input/getdataById.input';
 import { UserName } from 'aws-sdk/clients/directoryservice';
 
@@ -55,7 +55,7 @@ export class UsersService {
         return this.prisma.prismaClient.user.findMany({})
     }
 
-    async UsersDatas(): Promise<UserData[]> {
+    async UsersDatas() {
         return this.prisma.prismaClient.userData.findMany({ include: { user: true } })
     }
 
