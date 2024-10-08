@@ -6,6 +6,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { JobsModule } from './jobs/jobs.module';
 import { CompanyModule } from './company/company.module';
 import { CommunityModule } from './community/community.module';
+import { PdfModule } from './pdf/pdf.module';
 import * as cors from 'cors';
 
 @Module({
@@ -13,7 +14,7 @@ import * as cors from 'cors';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
-    }),UsersModule , PrismaModule, JobsModule, CompanyModule, CommunityModule],
+    }),UsersModule , PrismaModule, JobsModule, CompanyModule, CommunityModule, PdfModule],
   controllers: [],
   providers: [],
 })
